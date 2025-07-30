@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="craneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#facc15;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="containerBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="containerRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="containerGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6b7280;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4b5563;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0f2fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bae6fd;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect x="0" y="0" width="800" height="300" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="300" width="800" height="100" fill="url(#groundGradient)"/>
+  
+  <!-- Container yard layout -->
+  <g id="containers">
+    <!-- Row 1 -->
+    <rect x="50" y="240" width="80" height="40" fill="url(#containerBlue)" stroke="#1e40af" stroke-width="2"/>
+    <rect x="140" y="240" width="80" height="40" fill="url(#containerRed)" stroke="#dc2626" stroke-width="2"/>
+    <rect x="230" y="240" width="80" height="40" fill="url(#containerGreen)" stroke="#059669" stroke-width="2"/>
+    <rect x="320" y="240" width="80" height="40" fill="url(#containerBlue)" stroke="#1e40af" stroke-width="2"/>
+    
+    <!-- Row 1 - Second level -->
+    <rect x="50" y="200" width="80" height="40" fill="url(#containerRed)" stroke="#dc2626" stroke-width="2"/>
+    <rect x="140" y="200" width="80" height="40" fill="url(#containerGreen)" stroke="#059669" stroke-width="2"/>
+    <rect x="230" y="200" width="80" height="40" fill="url(#containerBlue)" stroke="#1e40af" stroke-width="2"/>
+    
+    <!-- Row 1 - Third level -->
+    <rect x="50" y="160" width="80" height="40" fill="url(#containerGreen)" stroke="#059669" stroke-width="2"/>
+    <rect x="140" y="160" width="80" height="40" fill="url(#containerBlue)" stroke="#1e40af" stroke-width="2"/>
+    
+    <!-- Row 2 -->
+    <rect x="450" y="240" width="80" height="40" fill="url(#containerRed)" stroke="#dc2626" stroke-width="2"/>
+    <rect x="540" y="240" width="80" height="40" fill="url(#containerBlue)" stroke="#1e40af" stroke-width="2"/>
+    <rect x="630" y="240" width="80" height="40" fill="url(#containerGreen)" stroke="#059669" stroke-width="2"/>
+    
+    <!-- Row 2 - Second level -->
+    <rect x="450" y="200" width="80" height="40" fill="url(#containerGreen)" stroke="#059669" stroke-width="2"/>
+    <rect x="540" y="200" width="80" height="40" fill="url(#containerRed)" stroke="#dc2626" stroke-width="2"/>
+  </g>
+  
+  <!-- Container crane - Main structure -->
+  <g id="crane">
+    <!-- Crane legs -->
+    <rect x="380" y="120" width="8" height="180" fill="url(#craneGradient)" stroke="#ca8a04" stroke-width="1"/>
+    <rect x="420" y="120" width="8" height="180" fill="url(#craneGradient)" stroke="#ca8a04" stroke-width="1"/>
+    
+    <!-- Crane cross beam -->
+    <rect x="200" y="120" width="400" height="12" fill="url(#craneGradient)" stroke="#ca8a04" stroke-width="2"/>
+    
+    <!-- Crane trolley -->
+    <rect x="280" y="110" width="20" height="22" fill="#dc2626" stroke="#b91c1c" stroke-width="1"/>
+    
+    <!-- Crane hook and cables -->
+    <line x1="290" y1="132" x2="290" y2="180" stroke="#374151" stroke-width="3"/>
+    <line x1="285" y1="132" x2="285" y2="190" stroke="#374151" stroke-width="2"/>
+    <line x1="295" y1="132" x2="295" y2="190" stroke="#374151" stroke-width="2"/>
+    
+    <!-- Hook -->
+    <rect x="285" y="188" width="10" height="8" fill="#6b7280" stroke="#4b5563" stroke-width="1"/>
+    
+    <!-- Container being lifted -->
+    <rect x="250" y="180" width="80" height="40" fill="url(#containerRed)" stroke="#dc2626" stroke-width="2" opacity="0.9"/>
+  </g>
+  
+  <!-- Trucks -->
+  <g id="trucks">
+    <!-- Truck 1 -->
+    <rect x="60" y="320" width="100" height="25" fill="#1f2937" stroke="#111827" stroke-width="1"/>
+    <rect x="70" y="310" width="20" height="15" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+    <!-- Wheels -->
+    <circle cx="80" r="8" cy="350" fill="#111827"/>
+    <circle cx="140" r="8" cy="350" fill="#111827"/>
+    <circle cx="80" r="4" cy="350" fill="#6b7280"/>
+    <circle cx="140" r="4" cy="350" fill="#6b7280"/>
+    
+    <!-- Truck 2 -->
+    <rect x="500" y="320" width="100" height="25" fill="#1f2937" stroke="#111827" stroke-width="1"/>
+    <rect x="510" y="310" width="20" height="15" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+    <!-- Wheels -->
+    <circle cx="520" r="8" cy="350" fill="#111827"/>
+    <circle cx="580" r="8" cy="350" fill="#111827"/>
+    <circle cx="520" r="4" cy="350" fill="#6b7280"/>
+    <circle cx="580" r="4" cy="350" fill="#6b7280"/>
+  </g>
+  
+  <!-- Workers (simplified figures) -->
+  <g id="workers">
+    <!-- Worker 1 -->
+    <circle cx="180" cy="290" r="8" fill="#fbbf24"/>
+    <rect x="175" y="298" width="10" height="20" fill="#ef4444"/>
+    <rect x="173" y="318" width="6" height="15" fill="#1e40af"/>
+    <rect x="181" y="318" width="6" height="15" fill="#1e40af"/>
+    
+    <!-- Worker 2 -->
+    <circle cx="350" cy="290" r="8" fill="#fbbf24"/>
+    <rect x="345" y="298" width="10" height="20" fill="#10b981"/>
+    <rect x="343" y="318" width="6" height="15" fill="#1e40af"/>
+    <rect x="351" y="318" width="6" height="15" fill="#1e40af"/>
+    
+    <!-- Worker 3 -->
+    <circle cx="670" cy="290" r="8" fill="#fbbf24"/>
+    <rect x="665" y="298" width="10" height="20" fill="#f59e0b"/>
+    <rect x="663" y="318" width="6" height="15" fill="#1e40af"/>
+    <rect x="671" y="318" width="6" height="15" fill="#1e40af"/>
+  </g>
+  
+  <!-- Container details -->
+  <g id="container-details" stroke="#ffffff" stroke-width="1" opacity="0.6">
+    <!-- Container markings -->
+    <line x1="60" y1="250" x2="120" y2="250"/>
+    <line x1="60" y1="260" x2="120" y2="260"/>
+    <line x1="60" y1="270" x2="120" y2="270"/>
+    
+    <line x1="150" y1="250" x2="210" y2="250"/>
+    <line x1="150" y1="260" x2="210" y2="260"/>
+    <line x1="150" y1="270" x2="210" y2="270"/>
+  </g>
+  
+  <!-- Building/Office -->
+  <g id="office">
+    <rect x="720" y="200" width="70" height="100" fill="#6b7280" stroke="#4b5563" stroke-width="2"/>
+    <rect x="730" y="210" width="12" height="12" fill="#93c5fd" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="745" y="210" width="12" height="12" fill="#93c5fd" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="760" y="210" width="12" height="12" fill="#93c5fd" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="730" y="230" width="12" height="12" fill="#93c5fd" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="745" y="230" width="12" height="12" fill="#93c5fd" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="760" y="230" width="12" height="12" fill="#93c5fd" stroke="#3b82f6" stroke-width="1"/>
+    
+    <!-- Office door -->
+    <rect x="750" y="280" width="15" height="20" fill="#1f2937" stroke="#111827" stroke-width="1"/>
+  </g>
+  
+  <!-- Clouds -->
+  <circle cx="100" cy="50" r="15" fill="#ffffff" opacity="0.8"/>
+  <circle cx="115" cy="50" r="20" fill="#ffffff" opacity="0.8"/>
+  <circle cx="130" cy="50" r="12" fill="#ffffff" opacity="0.8"/>
+  
+  <circle cx="600" cy="80" r="18" fill="#ffffff" opacity="0.6"/>
+  <circle cx="620" cy="80" r="22" fill="#ffffff" opacity="0.6"/>
+  <circle cx="640" cy="80" r="16" fill="#ffffff" opacity="0.6"/>
+</svg>
