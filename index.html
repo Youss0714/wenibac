@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenibac Advanced Shipping Ltd. - Vos marchandises, notre priorité</title>
+    <meta name="description" content="Entreprise de transit professionnel au port de Tema, Ghana. Services de douane, transport maritime et terrestre, import/export.">
+    <meta name="keywords" content="transit, shipping, Ghana, Tema, douane, transport maritime, import, export">
+    <meta name="author" content="Wenibac Advanced Shipping Ltd.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Wenibac Advanced Shipping Ltd.">
+    <meta property="og:description" content="Vos marchandises, notre priorité - Services de transit professionnel">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-ship"></i>
+                <span>Wenibac Advanced Shipping</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-translate="nav.home">Accueil</a>
+                <a href="#services" class="nav-link" data-translate="nav.services">Services</a>
+                <a href="#about" class="nav-link" data-translate="nav.about">À propos</a>
+                <a href="#gallery" class="nav-link" data-translate="nav.gallery">Galerie</a>
+                <a href="#contact" class="nav-link" data-translate="nav.contact">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="language-switcher">
+                    <button id="langToggle" class="lang-btn">
+                        <span id="currentLang">FR</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section hero-section">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <div class="hero-animation">
+                    <div class="wave wave1"></div>
+                    <div class="wave wave2"></div>
+                    <div class="wave wave3"></div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="container">
+                    <h1 class="hero-title" data-translate="hero.title">
+                        Vos marchandises, notre priorité
+                    </h1>
+                    <p class="hero-subtitle" data-translate="hero.subtitle">
+                        Solutions de transport et de logistique professionnelles au port de Tema, Ghana
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" data-translate="hero.quote_btn">
+                            Demandez une cotation gratuite
+                        </button>
+                        <button class="btn btn-secondary" data-translate="hero.learn_more">
+                            En savoir plus
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials Carousel -->
+            <div class="testimonials-section">
+                <div class="container">
+                    <div class="testimonials-carousel" id="testimonialsCarousel">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-content">
+                                <p data-translate="testimonials.1.text">"Service exceptionnel et équipe très professionnelle. Nos marchandises sont toujours livrées à temps."</p>
+                                <div class="testimonial-author">
+                                    <strong data-translate="testimonials.1.author">Jean-Marie Kouassi</strong>
+                                    <span data-translate="testimonials.1.company">Directeur, Import Ghana Ltd</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <p data-translate="testimonials.2.text">"Une expertise remarquable dans les procédures douanières. Je recommande vivement Wenibac."</p>
+                                <div class="testimonial-author">
+                                    <strong data-translate="testimonials.2.author">Sarah Mitchell</strong>
+                                    <span data-translate="testimonials.2.company">CEO, West Africa Trading</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <p data-translate="testimonials.3.text">"Solutions logistiques adaptées à nos besoins spécifiques. Excellent rapport qualité-prix."</p>
+                                <div class="testimonial-author">
+                                    <strong data-translate="testimonials.3.author">Mohammed Al-Hassan</strong>
+                                    <span data-translate="testimonials.3.company">Logistics Manager, Golden Coast</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="services.title">Nos Services</h2>
+                    <p data-translate="services.subtitle">Des solutions complètes pour tous vos besoins logistiques</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 data-translate="services.customs.title">Douane & Transit</h3>
+                        <p data-translate="services.customs.description">Gestion complète des procédures douanières et de transit pour vos importations et exportations.</p>
+                        <button class="btn btn-outline" data-translate="services.learn_more">En savoir plus</button>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 data-translate="services.transport.title">Transport Terrestre & Maritime</h3>
+                        <p data-translate="services.transport.description">Solutions de transport sécurisées par voie terrestre et maritime avec suivi en temps réel.</p>
+                        <button class="btn btn-outline" data-translate="services.learn_more">En savoir plus</button>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3 data-translate="services.import_export.title">Import/Export</h3>
+                        <p data-translate="services.import_export.description">Accompagnement complet dans vos opérations d'import et d'export avec les meilleurs partenaires.</p>
+                        <button class="btn btn-outline" data-translate="services.learn_more">En savoir plus</button>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 data-translate="services.contracts.title">Contrats & Trading</h3>
+                        <p data-translate="services.contracts.description">Négociation et gestion de contrats commerciaux avec expertise juridique et commerciale.</p>
+                        <button class="btn btn-outline" data-translate="services.learn_more">En savoir plus</button>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-translate="services.consulting.title">Consultation Logistique</h3>
+                        <p data-translate="services.consulting.description">Conseils personnalisés pour optimiser votre chaîne logistique et réduire vos coûts.</p>
+                        <button class="btn btn-outline" data-translate="services.learn_more">En savoir plus</button>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3 data-translate="services.storage.title">Stockage & Entreposage</h3>
+                        <p data-translate="services.storage.description">Solutions de stockage sécurisées avec gestion d'inventaire et services de distribution.</p>
+                        <button class="btn btn-outline" data-translate="services.learn_more">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="about.title">À Propos de Nous</h2>
+                    <p data-translate="about.subtitle">Une expertise reconnue dans le transport et la logistique</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 data-translate="about.history.title">Notre Histoire</h3>
+                        <p data-translate="about.history.text">
+                            Fondée au cœur du port de Tema, Wenibac Advanced Shipping Ltd. s'est imposée comme un acteur incontournable 
+                            du secteur logistique ghanéen. Forte de notre expérience et de notre connaissance approfondie des 
+                            réglementations locales et internationales, nous accompagnons nos clients dans leurs défis logistiques 
+                            les plus complexes.
+                        </p>
+                        
+                        <h3 data-translate="about.mission.title">Notre Mission</h3>
+                        <p data-translate="about.mission.text">
+                            Faciliter les échanges commerciaux en offrant des solutions logistiques innovantes, fiables et 
+                            personnalisées. Nous nous engageons à être le partenaire de confiance de nos clients dans leur 
+                            développement commercial.
+                        </p>
+                        
+                        <h3 data-translate="about.values.title">Nos Valeurs</h3>
+                        <ul class="values-list">
+                            <li data-translate="about.values.reliability">
+                                <i class="fas fa-check-circle"></i>
+                                Fiabilité et ponctualité
+                            </li>
+                            <li data-translate="about.values.excellence">
+                                <i class="fas fa-check-circle"></i>
+                                Excellence opérationnelle
+                            </li>
+                            <li data-translate="about.values.transparency">
+                                <i class="fas fa-check-circle"></i>
+                                Transparence et intégrité
+                            </li>
+                            <li data-translate="about.values.innovation">
+                                <i class="fas fa-check-circle"></i>
+                                Innovation continue
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-map">
+                        <h3 data-translate="about.location.title">Notre Localisation</h3>
+                        <div class="map-container">
+                            <div id="map" class="map-placeholder">
+                                <div class="map-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <strong>GIFF Complex, Room 209</strong><br>
+                                        <span>Tema, Ghana</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+233 XX XXX XXXX</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>+233 XX XXX XXXX</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@wenibacshipping.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="gallery.title">Galerie</h2>
+                    <p data-translate="gallery.subtitle">Découvrez nos installations et nos opérations</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="fleet">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-truck"></i>
+                            <span data-translate="gallery.fleet">Notre Flotte</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="cargo">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-boxes"></i>
+                            <span data-translate="gallery.cargo">Cargaisons</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="port">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-anchor"></i>
+                            <span data-translate="gallery.port">Port de Tema</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="team">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-users"></i>
+                            <span data-translate="gallery.team">Notre Équipe</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="operations">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-cogs"></i>
+                            <span data-translate="gallery.operations">Opérations</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="warehouse">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-warehouse"></i>
+                            <span data-translate="gallery.warehouse">Entrepôts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-translate="contact.title">Contactez-Nous</h2>
+                    <p data-translate="contact.subtitle">Nous sommes là pour répondre à vos besoins</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name" data-translate="contact.form.name">Nom complet</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" data-translate="contact.form.email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" data-translate="contact.form.phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service" data-translate="contact.form.service">Service souhaité</label>
+                                <select id="service" name="service">
+                                    <option value="" data-translate="contact.form.select_service">Sélectionnez un service</option>
+                                    <option value="customs" data-translate="contact.form.customs">Douane & Transit</option>
+                                    <option value="transport" data-translate="contact.form.transport">Transport</option>
+                                    <option value="import_export" data-translate="contact.form.import_export">Import/Export</option>
+                                    <option value="contracts" data-translate="contact.form.contracts">Contrats & Trading</option>
+                                    <option value="consulting" data-translate="contact.form.consulting">Consultation</option>
+                                    <option value="other" data-translate="contact.form.other">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" data-translate="contact.form.message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" data-translate="contact.form.submit">
+                                Envoyer le message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info-container">
+                        <div class="contact-card">
+                            <h3 data-translate="contact.info.title">Informations de Contact</h3>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong data-translate="contact.info.address">Adresse</strong>
+                                    <span>GIFF Complex, Room 209<br>Tema, Ghana</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong data-translate="contact.info.phone">Téléphone</strong>
+                                    <span>+233 XX XXX XXXX</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong data-translate="contact.info.email">Email</strong>
+                                    <span>info@wenibacshipping.com</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong data-translate="contact.info.hours">Heures d'ouverture</strong>
+                                    <span data-translate="contact.info.hours_detail">Lun-Ven: 8h00-18h00<br>Sam: 8h00-14h00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="whatsapp-card">
+                            <div class="whatsapp-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h4 data-translate="contact.whatsapp.title">Contact WhatsApp</h4>
+                            <p data-translate="contact.whatsapp.text">Contactez-nous directement sur WhatsApp pour une réponse rapide</p>
+                            <a href="https://wa.me/233XXXXXXXXX" class="btn btn-whatsapp" target="_blank" data-translate="contact.whatsapp.button">
+                                <i class="fab fa-whatsapp"></i>
+                                Ouvrir WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-ship"></i>
+                        <span>Wenibac Advanced Shipping</span>
+                    </div>
+                    <p data-translate="footer.description">
+                        Votre partenaire de confiance pour tous vos besoins en transport et logistique au Ghana et en Afrique de l'Ouest.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-translate="footer.services.title">Services</h4>
+                    <ul>
+                        <li><a href="#services" data-translate="footer.services.customs">Douane & Transit</a></li>
+                        <li><a href="#services" data-translate="footer.services.transport">Transport Maritime</a></li>
+                        <li><a href="#services" data-translate="footer.services.import_export">Import/Export</a></li>
+                        <li><a href="#services" data-translate="footer.services.consulting">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-translate="footer.company.title">Entreprise</h4>
+                    <ul>
+                        <li><a href="#about" data-translate="footer.company.about">À propos</a></li>
+                        <li><a href="#gallery" data-translate="footer.company.gallery">Galerie</a></li>
+                        <li><a href="#contact" data-translate="footer.company.contact">Contact</a></li>
+                        <li><a href="#" data-translate="footer.company.careers">Carrières</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-translate="footer.contact.title">Contact</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> GIFF Complex, Room 209, Tema</p>
+                        <p><i class="fas fa-phone"></i> +233 XX XXX XXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@wenibacshipping.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">
+                    © 2025 Wenibac Advanced Shipping Ltd. Tous droits réservés.
+                </p>
+                <div class="footer-links">
+                    <a href="#" data-translate="footer.privacy">Politique de confidentialité</a>
+                    <a href="#" data-translate="footer.terms">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Google Maps API (replace YOUR_API_KEY with actual key from environment) -->
+    <script>
+        const GOOGLE_MAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY_HERE'; // This should come from environment variables
+        if (GOOGLE_MAPS_API_KEY && GOOGLE_MAPS_API_KEY !== 'YOUR_GOOGLE_MAPS_API_KEY_HERE') {
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=initMap`;
+            script.async = true;
+            document.head.appendChild(script);
+        }
+    </script>
+</body>
+</html>
