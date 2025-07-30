@@ -12,6 +12,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - Updated gallery section with realistic shipping images and hover overlay effects
 - Added professional hero background featuring port scene with cargo ships and cranes
 - Updated contact information with correct email: wenibac67@gmail.com
+- Updated phone number to +233303214304 throughout website including WhatsApp integration
 - Improved visual appeal and professional appearance across all sections
 
 ## User Preferences
