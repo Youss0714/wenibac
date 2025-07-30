@@ -4,6 +4,16 @@
 
 This is a bilingual (French/English) responsive website for Wenibac Advanced Shipping Ltd., a transit and logistics company operating at the Tema port in Ghana. The website is built with vanilla HTML, CSS, and JavaScript, focusing on modern design principles and professional presentation of shipping and logistics services.
 
+## Recent Changes
+
+**July 30, 2025:**
+- Enhanced website with professional shipping imagery
+- Created 5 custom SVG illustrations: cargo ship, port operations, warehouse, team work, truck transport
+- Updated gallery section with realistic shipping images and hover overlay effects
+- Added professional hero background featuring port scene with cargo ships and cranes
+- Updated contact information with correct email: wenibac67@gmail.com
+- Improved visual appeal and professional appearance across all sections
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
