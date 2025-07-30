@@ -1,0 +1,44 @@
+Développe un site web bilingue (français/anglais) responsive et moderne en HTML, CSS et JavaScript pour une entreprise de transit nommée "Wenibac Advanced Shipping Ltd.", située au port de Tema, Ghana. Le site doit inclure les éléments suivants :
+
+1. ✅ Structure générale :
+   - Menu de navigation clair et sticky avec liens vers Accueil, Services, À propos, Galerie, Contact
+   - Footer complet avec liens utiles, réseaux sociaux, mentions légales
+
+2. 🏠 Page d'accueil :
+   - Bannière avec fond animé (port ou bateau) et slogan : "Vos marchandises, notre priorité"
+   - Section introductive avec phrase d'accroche et bouton "Demandez une cotation gratuite"
+   - Témoignages clients défilants
+
+3. 📦 Page Services :
+   - Présentation en grille avec icônes et titres animés
+   - Détail de chaque service : Douane & Transit, Transport terrestre & maritime, Import/Export, Contrats & Trading, Consultation logistique personnalisée
+   - Boutons “En savoir plus” pour chaque service
+
+4. 🧭 Page À propos :
+   - Historique de l’entreprise, mission, valeurs
+   - Équipe dirigeante avec photos
+   - Carte interactive du bureau (GIFF Complex, Room 209, Tema)
+
+5. 📸 Page Galerie :
+   - Carrousel photo (flottes, cargaisons, moments en action)
+   - Témoignages vidéo si possible
+
+6. 📞 Page Contact :
+   - Formulaire dynamique avec validation (Nom, Email, Message)
+   - Coordonnées : téléphone, WhatsApp, e-mails
+   - Intégration API WhatsApp pour contact direct
+
+7. 🌐 Fonctionnalités techniques :
+   - Site 100% responsive (mobile, tablette, desktop)
+   - SEO optimisé : balises méta, titre, description, alt images
+   - Performances : chargement rapide, lazy loading images
+   - Accessibilité : contrastes, navigation clavier
+   - Intégration favicon, animations CSS douces
+   - Code structuré avec fichiers séparés (index.html, style.css, script.js)
+
+8. 🧩 Bonus :
+   - Option d’ajout de Google Analytics
+   - Intégration Google Maps pour localisation
+   - Option de passerelle multilingue dynamique (bouton switch FR/EN)
+
+Le design doit transmettre fiabilité, professionnalisme et modernité, avec une palette de couleurs sobres (bleu marine, blanc, gris clair) et des polices lisibles.
