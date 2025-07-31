@@ -24,7 +24,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - Replaced SVG port illustration with authentic aerial photo of Tema Port showing cranes and container operations
 - Updated hero section background images with new spectacular photos of container ships at Tema Port with blue cranes
 - Replaced operations section SVG with authentic photo of port crane handling MSC containers
-- Updated testimonials to use generic professional titles (Commerçant, Entrepreneur, Importateur) instead of specific company positions
+- Updated testimonials to use generic professional titles (Commerçant, Entrepreneur, Importateur) and simplified names (Kwame A., Aisha M., Omar K.) for privacy
 - Verified all website functionality works correctly in Replit environment
 
 ## User Preferences

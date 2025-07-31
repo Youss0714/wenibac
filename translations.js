@@ -20,15 +20,15 @@ const translations = {
         
         // Testimonials
         'testimonials.1.text': '"Service exceptionnel et équipe très professionnelle. Nos marchandises sont toujours livrées à temps."',
-        'testimonials.1.author': 'Jean-Marie Kouassi',
+        'testimonials.1.author': 'Kwame A.',
         'testimonials.1.company': 'Commerçant',
         
         'testimonials.2.text': '"Une expertise remarquable dans les procédures douanières. Je recommande vivement Wenibac."',
-        'testimonials.2.author': 'Sarah Mitchell',
+        'testimonials.2.author': 'Aisha M.',
         'testimonials.2.company': 'Entrepreneur',
         
         'testimonials.3.text': '"Solutions logistiques adaptées à nos besoins spécifiques. Excellent rapport qualité-prix."',
-        'testimonials.3.author': 'Mohammed Al-Hassan',
+        'testimonials.3.author': 'Omar K.',
         'testimonials.3.company': 'Importateur',
         
         // Services section
@@ -161,15 +161,15 @@ const translations = {
         
         // Testimonials
         'testimonials.1.text': '"Exceptional service and very professional team. Our goods are always delivered on time."',
-        'testimonials.1.author': 'Jean-Marie Kouassi',
+        'testimonials.1.author': 'Kwame A.',
         'testimonials.1.company': 'Merchant',
         
         'testimonials.2.text': '"Remarkable expertise in customs procedures. I highly recommend Wenibac."',
-        'testimonials.2.author': 'Sarah Mitchell',
+        'testimonials.2.author': 'Aisha M.',
         'testimonials.2.company': 'Entrepreneur',
         
         'testimonials.3.text': '"Logistics solutions tailored to our specific needs. Excellent value for money."',
-        'testimonials.3.author': 'Mohammed Al-Hassan',
+        'testimonials.3.author': 'Omar K.',
         'testimonials.3.company': 'Importer',
         
         // Services section
