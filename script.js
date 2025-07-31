@@ -595,8 +595,80 @@ function openWhatsApp(message = '') {
     window.open(whatsappURL, '_blank');
 }
 
+// Hero image rotation functionality
+function setupHeroImageRotation() {
+    const heroSection = document.querySelector('.hero-section');
+    const indicators = document.querySelectorAll('.indicator');
+    if (!heroSection || indicators.length === 0) return;
+    
+    let currentImage = 1;
+    const totalImages = 2;
+    let rotationInterval;
+    
+    function updateHeroImage(imageNumber) {
+        currentImage = imageNumber;
+        
+        // Update hero section class
+        if (currentImage === 2) {
+            heroSection.classList.add('image-2');
+        } else {
+            heroSection.classList.remove('image-2');
+        }
+        
+        // Update indicators
+        indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+            if (parseInt(indicator.dataset.image) === currentImage) {
+                indicator.classList.add('active');
+            }
+        });
+    }
+    
+    function rotateHeroImage() {
+        const nextImage = currentImage === 1 ? 2 : 1;
+        updateHeroImage(nextImage);
+    }
+    
+    // Auto-rotate images every 8 seconds
+    function startRotation() {
+        rotationInterval = setInterval(rotateHeroImage, 8000);
+    }
+    
+    function stopRotation() {
+        if (rotationInterval) {
+            clearInterval(rotationInterval);
+        }
+    }
+    
+    // Add click handlers to indicators
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', function() {
+            const imageNumber = parseInt(this.dataset.image);
+            updateHeroImage(imageNumber);
+            
+            // Restart rotation timer
+            stopRotation();
+            startRotation();
+        });
+    });
+    
+    // Start automatic rotation
+    startRotation();
+    
+    // Pause rotation on hero hover, resume on leave
+    heroSection.addEventListener('mouseenter', stopRotation);
+    heroSection.addEventListener('mouseleave', startRotation);
+    
+    // Preload the second image for smooth transitions
+    const img = new Image();
+    img.src = 'assets/images/tema-port-hero-2.png?v=1';
+}
+
 // Add WhatsApp click handlers
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize hero image rotation
+    setupHeroImageRotation();
+    
     document.querySelectorAll('.btn-whatsapp, [href*="wa.me"]').forEach(button => {
         button.addEventListener('click', function(e) {
             if (this.classList.contains('btn-whatsapp')) {
