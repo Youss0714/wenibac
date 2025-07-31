@@ -1246,7 +1246,6 @@ body {
     
     .footer-links {
         justify-content: center;
-    }
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
