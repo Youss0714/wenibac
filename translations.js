@@ -8,6 +8,7 @@ const translations = {
         // Navigation
         'nav.home': 'Accueil',
         'nav.services': 'Services',
+        'nav.tracking': 'Suivi Cargaison',
         'nav.about': 'À propos',
         'nav.gallery': 'Galerie',
         'nav.contact': 'Contact',
@@ -17,6 +18,7 @@ const translations = {
         'hero.subtitle': 'Solutions de transport et de logistique professionnelles au port de Tema, Ghana',
         'hero.quote_btn': 'Demandez une cotation gratuite',
         'hero.learn_more': 'En savoir plus',
+        'hero.track_btn': 'Suivre ma cargaison',
         
         // Testimonials
         'testimonials.1.text': '"Service exceptionnel et équipe très professionnelle. Nos marchandises sont toujours livrées à temps."',
@@ -53,6 +55,25 @@ const translations = {
         
         'services.storage.title': 'Stockage & Entreposage',
         'services.storage.description': 'Solutions de stockage sécurisées avec gestion d\'inventaire et services de distribution.',
+        
+        // Cargo Tracking section
+        'tracking.title': 'Suivi de Cargaison',
+        'tracking.subtitle': 'Suivez vos marchandises en temps réel',
+        'tracking.placeholder': 'Entrez votre numéro de suivi',
+        'tracking.button': 'Suivre',
+        'tracking.help': 'Besoin d\'aide ? Contactez notre équipe',
+        'tracking.info.title': 'Comment suivre votre cargaison',
+        'tracking.info.step1': 'Entrez votre numéro de suivi dans le champ ci-dessus',
+        'tracking.info.step2': 'Cliquez sur "Suivre" pour voir le statut',
+        'tracking.info.step3': 'Consultez les détails de votre expédition',
+        'tracking.statuses.pending': 'En attente',
+        'tracking.statuses.processing': 'En cours de traitement',
+        'tracking.statuses.shipped': 'Expédié',
+        'tracking.statuses.in_transit': 'En transit',
+        'tracking.statuses.customs': 'En douane',
+        'tracking.statuses.delivered': 'Livré',
+        'tracking.error.not_found': 'Numéro de suivi non trouvé',
+        'tracking.error.invalid': 'Numéro de suivi invalide',
         
         // About section
         'about.title': 'À Propos de Nous',
@@ -149,6 +170,7 @@ const translations = {
         // Navigation
         'nav.home': 'Home',
         'nav.services': 'Services',
+        'nav.tracking': 'Cargo Tracking',
         'nav.about': 'About',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
@@ -158,6 +180,7 @@ const translations = {
         'hero.subtitle': 'Professional transport and logistics solutions at Tema port, Ghana',
         'hero.quote_btn': 'Request a free quote',
         'hero.learn_more': 'Learn more',
+        'hero.track_btn': 'Track my cargo',
         
         // Testimonials
         'testimonials.1.text': '"Exceptional service and very professional team. Our goods are always delivered on time."',
@@ -194,6 +217,25 @@ const translations = {
         
         'services.storage.title': 'Storage & Warehousing',
         'services.storage.description': 'Secure storage solutions with inventory management and distribution services.',
+        
+        // Cargo Tracking section
+        'tracking.title': 'Cargo Tracking',
+        'tracking.subtitle': 'Track your goods in real time',
+        'tracking.placeholder': 'Enter your tracking number',
+        'tracking.button': 'Track',
+        'tracking.help': 'Need help? Contact our team',
+        'tracking.info.title': 'How to track your cargo',
+        'tracking.info.step1': 'Enter your tracking number in the field above',
+        'tracking.info.step2': 'Click "Track" to see the status',
+        'tracking.info.step3': 'View your shipment details',
+        'tracking.statuses.pending': 'Pending',
+        'tracking.statuses.processing': 'Processing',
+        'tracking.statuses.shipped': 'Shipped',
+        'tracking.statuses.in_transit': 'In Transit',
+        'tracking.statuses.customs': 'In Customs',
+        'tracking.statuses.delivered': 'Delivered',
+        'tracking.error.not_found': 'Tracking number not found',
+        'tracking.error.invalid': 'Invalid tracking number',
         
         // About section
         'about.title': 'About Us',
