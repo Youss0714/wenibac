@@ -45,6 +45,7 @@ function initializeApp() {
     setupTestimonials();
     setupContactForm();
     setupHeroButtons();
+    setupServiceButtons();
     setupLazyLoading();
     setupGoogleMaps();
     setupAnimations();
@@ -708,13 +709,21 @@ function setupHeroButtons() {
         learnMoreBtn.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Scroll to services section
-            const servicesSection = document.getElementById('services');
-            if (servicesSection) {
-                servicesSection.scrollIntoView({ 
+            // Scroll to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
                 });
+                
+                // Focus on the first form field after scrolling
+                setTimeout(() => {
+                    const firstInput = contactSection.querySelector('input, textarea');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 800);
             }
         });
     }
@@ -1022,6 +1031,35 @@ function resetTracking() {
     if (trackingForm) {
         trackingForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+}
+
+// Service buttons functionality
+function setupServiceButtons() {
+    // Get all "En savoir plus" buttons in the services section
+    const serviceButtons = document.querySelectorAll('.service-card .btn-outline');
+    
+    serviceButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Scroll to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Focus on the first form field after scrolling
+                setTimeout(() => {
+                    const firstInput = contactSection.querySelector('input, textarea');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 800);
+            }
+        });
+    });
 }
 
 // Function to scroll to sections (used by hero tracking button)

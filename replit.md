@@ -28,6 +28,8 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **Added Cargo Tracking System**: Complete cargo tracking functionality with timeline visualization, sample tracking data, and bilingual support
 - Added tracking navigation link and hero button for easy access to tracking functionality
 - Implemented responsive design for tracking section with mobile-optimized layout
+- **Improved Button Visibility**: Enhanced contrast and visual appearance of hero section buttons for better readability
+- **Updated Button Navigation**: All "En savoir plus" buttons now redirect to contact section for lead generation
 - Verified all website functionality works correctly in Replit environment
 
 ## User Preferences
