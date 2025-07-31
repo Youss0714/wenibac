@@ -307,10 +307,17 @@
                             <span data-translate="gallery.fleet">Notre Flotte</span>
                         </div>
                     </div>
-                    <div class="gallery-item" data-category="cargo">
-                        <img src="assets/images/container-handling.png" alt="Manipulation de conteneurs au port" loading="lazy">
+                    <div class="gallery-item cargo-carousel" data-category="cargo">
+                        <div class="carousel-wrapper">
+                            <img src="assets/images/container-handling.png" alt="Manipulation de conteneurs au port" loading="lazy" class="carousel-image active">
+                            <img src="assets/images/cargo-loading.jpg" alt="Chargement de cartons sur navire" loading="lazy" class="carousel-image">
+                        </div>
                         <div class="gallery-overlay">
                             <span data-translate="gallery.cargo">Cargaisons</span>
+                        </div>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="0"></span>
+                            <span class="indicator" data-slide="1"></span>
                         </div>
                     </div>
                     <div class="gallery-item" data-category="port">

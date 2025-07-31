@@ -19,6 +19,8 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - Fixed CSS syntax errors that were causing display issues
 - Installed Python 3.11 to support the HTTP server workflow
 - Added new container handling image to cargo gallery section, replacing original SVG cargo image
+- Added second cargo image showing cargo loading operations on ship deck
+- Implemented automatic image carousel rotation for cargo section with indicators and hover controls
 - Verified all website functionality works correctly in Replit environment
 
 ## User Preferences

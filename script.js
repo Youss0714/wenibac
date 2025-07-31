@@ -48,6 +48,7 @@ function initializeApp() {
     setupLazyLoading();
     setupGoogleMaps();
     setupAnimations();
+    setupCargoCarousel();
     
     // Set initial language
     setLanguage(currentLanguage);
@@ -591,6 +592,60 @@ function setupAnimations() {
             animationObserver.observe(el);
         });
     }
+}
+
+// Cargo carousel functionality
+function setupCargoCarousel() {
+    const cargoCarousel = document.querySelector('.cargo-carousel');
+    if (!cargoCarousel) return;
+    
+    const images = cargoCarousel.querySelectorAll('.carousel-image');
+    const indicators = cargoCarousel.querySelectorAll('.carousel-indicators .indicator');
+    let currentSlide = 0;
+    let carouselInterval;
+    
+    function showSlide(index) {
+        // Remove active class from all images and indicators
+        images.forEach(img => img.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+        
+        // Add active class to current slide
+        images[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        const next = (currentSlide + 1) % images.length;
+        showSlide(next);
+    }
+    
+    function startCarousel() {
+        carouselInterval = setInterval(nextSlide, 4000); // Change every 4 seconds
+    }
+    
+    function stopCarousel() {
+        if (carouselInterval) {
+            clearInterval(carouselInterval);
+        }
+    }
+    
+    // Add click handlers for indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            stopCarousel();
+            startCarousel(); // Restart the timer
+        });
+    });
+    
+    // Pause on hover
+    cargoCarousel.addEventListener('mouseenter', stopCarousel);
+    cargoCarousel.addEventListener('mouseleave', startCarousel);
+    
+    // Start the carousel
+    startCarousel();
 }
 
 // Utility functions
