@@ -1048,6 +1048,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
     .nav-menu {
         position: fixed;
         top: 100%;
@@ -1061,12 +1065,23 @@ body {
         opacity: 0;
         visibility: hidden;
         transition: all var(--transition-normal);
+        z-index: 1000;
     }
     
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-lg);
+        border-bottom: 1px solid var(--gray-light);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
     }
     
     .nav-toggle {
@@ -1085,39 +1100,153 @@ body {
         transform: rotate(-45deg) translate(7px, -6px);
     }
     
+    /* Hero Section Mobile */
+    .hero-section {
+        min-height: 100vh;
+        padding: var(--spacing-xl) 0 var(--spacing-2xl);
+    }
+    
+    .hero-content .container {
+        padding: var(--spacing-lg);
+    }
+    
     .hero-title {
-        font-size: var(--font-size-4xl);
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-md);
     }
     
     .hero-subtitle {
         font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-xl);
+        line-height: 1.5;
     }
     
     .hero-actions {
         flex-direction: column;
         align-items: center;
+        gap: var(--spacing-md);
     }
     
     .hero-actions .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-lg);
     }
     
+    .hero-indicators {
+        bottom: 20px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    /* Testimonials Mobile */
+    .testimonials-section {
+        padding: var(--spacing-lg) 0;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .testimonial-content {
+        padding: var(--spacing-md);
+    }
+    
+    .testimonial-content p {
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+    }
+    
+    /* Services Mobile */
     .services-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    
-    .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
     
+    .service-card {
+        padding: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto var(--spacing-md);
+    }
+    
+    /* Gallery Mobile */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .gallery-item {
+        aspect-ratio: 16/9;
+    }
+    
+    /* Contact Section Mobile */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .form-group {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .form-control {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+    
+    /* Maps Mobile */
+    #map {
+        height: 250px;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .map-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .map-directions-btn,
+    .map-view-btn {
+        width: 100%;
+        justify-content: center;
+        padding: var(--spacing-md);
+    }
+    
+    /* Footer Mobile */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .footer-section h3 {
+        margin-bottom: var(--spacing-md);
+    }
+    
     .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
@@ -1126,29 +1255,244 @@ body {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-xs);
     }
     
     .section {
         padding: var(--spacing-xl) 0;
     }
     
+    /* Navigation Mobile Small */
+    .nav-brand span {
+        font-size: var(--font-size-base);
+    }
+    
+    .lang-btn {
+        padding: var(--spacing-xs);
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Hero Mobile Small */
+    .hero-content .container {
+        padding: var(--spacing-md);
+    }
+    
     .hero-title {
-        font-size: var(--font-size-3xl);
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-actions .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-base);
+        max-width: 260px;
+    }
+    
+    /* Section Headers Mobile Small */
+    .section-header {
+        margin-bottom: var(--spacing-xl);
     }
     
     .section-header h2 {
         font-size: var(--font-size-2xl);
+        line-height: 1.2;
+        margin-bottom: var(--spacing-xs);
     }
     
-    .service-card,
+    .section-header p {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Services Mobile Small */
+    .service-card {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .service-card h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .service-card p {
+        font-size: var(--font-size-sm);
+        line-height: 1.5;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* About Section Mobile Small */
+    .about-card {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    /* Contact Mobile Small */
     .contact-card,
     .whatsapp-card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
     }
     
+    .whatsapp-card h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .form-control {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-submit {
+        width: 100%;
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+    
+    /* Maps Mobile Small */
+    #map {
+        height: 200px;
+        border-radius: 8px;
+    }
+    
+    /* Testimonials Mobile Small */
     .testimonials-section {
-        padding: var(--spacing-lg) 0;
+        padding: var(--spacing-md) 0;
+    }
+    
+    .testimonial-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .testimonial-content p {
+        font-size: var(--font-size-sm);
+        line-height: 1.5;
+    }
+    
+    .testimonial-author {
+        margin-top: var(--spacing-sm);
+    }
+    
+    .testimonial-author strong {
+        font-size: var(--font-size-sm);
+    }
+    
+    .testimonial-author span {
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Footer Mobile Small */
+    .footer {
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+    
+    .footer-section h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .footer-section ul li {
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .footer-section a {
+        font-size: var(--font-size-sm);
+    }
+    
+    .footer-bottom p {
+        font-size: var(--font-size-xs);
+    }
+    
+    .footer-links a {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Touch device optimizations */
+@media (max-width: 768px) and (pointer: coarse) {
+    .btn,
+    .nav-link,
+    .lang-btn,
+    .nav-toggle,
+    .indicator {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .service-card:hover,
+    .gallery-item:hover {
+        transform: none;
+    }
+    
+    .service-card:active,
+    .gallery-item:active {
+        transform: scale(0.98);
+    }
+    
+    .btn:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Landscape phone specific */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 80vh;
+        padding: var(--spacing-md) 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-actions {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+    }
+    
+    .hero-actions .btn {
+        max-width: 200px;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* Very small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .nav-brand span {
+        display: none;
+    }
+    
+    .nav-brand i {
+        font-size: var(--font-size-xl);
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-actions .btn {
+        max-width: 240px;
+        padding: var(--spacing-sm);
+    }
+    
+    .service-card {
+        padding: var(--spacing-md);
+    }
+    
+    .contact-card,
+    .whatsapp-card {
+        padding: var(--spacing-sm);
     }
 }
 
