@@ -798,7 +798,7 @@ function setupHeroImageRotation() {
     
     // Preload the second image for smooth transitions
     const img = new Image();
-    img.src = 'assets/images/tema-port-hero-2.png?v=1';
+    img.src = 'assets/images/tema-port-hero-new2.png';
 }
 
 // Add WhatsApp click handlers

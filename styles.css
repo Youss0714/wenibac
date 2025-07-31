@@ -270,14 +270,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('assets/images/tema-port-hero.png?v=1') center center / cover no-repeat,
+    background: url('assets/images/tema-port-hero-new1.png') center center / cover no-repeat,
                 linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
     overflow: hidden;
     transition: background-image 1s ease-in-out;
 }
 
 .hero-section.image-2 {
-    background: url('assets/images/tema-port-hero-2.png?v=1') center center / cover no-repeat,
+    background: url('assets/images/tema-port-hero-new2.png') center center / cover no-repeat,
                 linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
 }
 
