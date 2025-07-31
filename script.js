@@ -1,5 +1,5 @@
 // Global variables
-let currentLanguage = 'fr';
+let currentLanguage = 'en';
 let currentTestimonial = 0;
 let testimonialInterval;
 

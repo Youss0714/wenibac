@@ -32,6 +32,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **Updated Button Navigation**: All "En savoir plus" buttons now redirect to contact section for lead generation
 - **Enhanced Company Story**: Updated "Notre Histoire" section with detailed founder background and 30+ years company history, including M. Yacubu Dawuda's vision and Wenibac's evolution as an officially approved transit agency at Tema Port
 - **Focus on Transit**: Repositioned messaging throughout the site to emphasize "Transit" over "Logistics" as the primary service focus, updating hero subtitle, about section, services descriptions, and footer content
+- **Default Language Changed to English**: Updated default language from French to English across the website, including HTML meta tags, navigation, hero section, services, and all static content
 - Verified all website functionality works correctly in Replit environment
 
 ## User Preferences
