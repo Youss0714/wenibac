@@ -3,22 +3,42 @@ let currentLanguage = 'fr';
 let currentTestimonial = 0;
 let testimonialInterval;
 
-// DOM elements
-const navbar = document.getElementById('navbar');
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-const langToggle = document.getElementById('langToggle');
-const currentLangElement = document.getElementById('currentLang');
-const testimonialsCarousel = document.getElementById('testimonialsCarousel');
-const contactForm = document.getElementById('contactForm');
-const loadingIndicator = document.getElementById('loadingIndicator');
+// DOM elements - Initialize after DOM is loaded
+let navbar, navToggle, navMenu, langToggle, currentLangElement, testimonialsCarousel, contactForm, loadingIndicator;
+
+function initializeDOMElements() {
+    navbar = document.getElementById('navbar');
+    navToggle = document.getElementById('navToggle');
+    navMenu = document.getElementById('navMenu');
+    langToggle = document.getElementById('langToggle');
+    currentLangElement = document.getElementById('currentLang');
+    testimonialsCarousel = document.getElementById('testimonialsCarousel');
+    contactForm = document.getElementById('contactForm');
+    loadingIndicator = document.getElementById('loadingIndicator');
+}
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
+    // Ensure translations are loaded before initializing
+    if (typeof translations !== 'undefined' && typeof getTranslation === 'function') {
+        initializeApp();
+    } else {
+        console.error('Translations not loaded');
+        // Retry after a short delay
+        setTimeout(() => {
+            if (typeof translations !== 'undefined' && typeof getTranslation === 'function') {
+                initializeApp();
+            } else {
+                console.error('Translations still not available after retry');
+            }
+        }, 100);
+    }
 });
 
 function initializeApp() {
+    // Initialize DOM elements first
+    initializeDOMElements();
+    
     setupNavigation();
     setupLanguageSwitcher();
     setupScrollEffects();
@@ -86,6 +106,11 @@ function updateActiveNavLink(activeLink) {
 
 // Language switcher functionality
 function setupLanguageSwitcher() {
+    if (!langToggle) {
+        console.error('Language toggle button not found');
+        return;
+    }
+    
     langToggle.addEventListener('click', function() {
         currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
         setLanguage(currentLanguage);
@@ -94,7 +119,16 @@ function setupLanguageSwitcher() {
 
 function setLanguage(lang) {
     currentLanguage = lang;
-    currentLangElement.textContent = lang.toUpperCase();
+    
+    // Check if translations are available
+    if (typeof getTranslation !== 'function') {
+        console.error('Translation function not available');
+        return;
+    }
+    
+    if (currentLangElement) {
+        currentLangElement.textContent = lang.toUpperCase();
+    }
     
     // Update document language
     document.documentElement.lang = lang;
@@ -111,6 +145,8 @@ function setLanguage(lang) {
             } else {
                 element.textContent = translation;
             }
+        } else {
+            console.warn(`Translation missing for key: ${key} in language: ${lang}`);
         }
     });
     
