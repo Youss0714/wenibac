@@ -18,7 +18,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **Migration to Replit Environment**: Successfully migrated from Replit Agent to standard Replit environment
 - Fixed CSS syntax errors that were causing display issues
 - Installed Python 3.11 to support the HTTP server workflow
-- Added new container handling image to cargo gallery section
+- Added new container handling image to cargo gallery section, replacing original SVG cargo image
 - Verified all website functionality works correctly in Replit environment
 
 ## User Preferences
