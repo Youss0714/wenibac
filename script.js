@@ -679,8 +679,8 @@ function throttle(func, limit) {
 // Hero buttons functionality
 function setupHeroButtons() {
     // Quote button functionality
-    const quoteBtn = document.querySelector('.btn-primary[data-translate="hero.quote_btn"]');
-    const learnMoreBtn = document.querySelector('.btn-secondary[data-translate="hero.learn_more"]');
+    const quoteBtn = document.querySelector('.hero-actions .btn-primary[data-translate="hero.quote_btn"]');
+    const learnMoreBtn = document.querySelector('.hero-actions .btn-outline[data-translate="hero.learn_more"]');
     
     if (quoteBtn) {
         quoteBtn.addEventListener('click', function(e) {
@@ -1035,8 +1035,8 @@ function resetTracking() {
 
 // Service buttons functionality
 function setupServiceButtons() {
-    // Get all "En savoir plus" buttons in the services section
-    const serviceButtons = document.querySelectorAll('.service-card .btn-outline');
+    // Get all "En savoir plus" buttons in the services section (exclude hero buttons)
+    const serviceButtons = document.querySelectorAll('.services-section .service-card .btn-outline');
     
     serviceButtons.forEach(button => {
         button.addEventListener('click', function(e) {
