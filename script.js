@@ -51,6 +51,7 @@ function initializeApp() {
     setupAnimations();
     setupCargoCarousel();
     setupCargoTracking();
+    setupChatbot();
     
     // Set initial language
     setLanguage(currentLanguage);
@@ -1070,6 +1071,85 @@ function scrollToSection(sectionId) {
     }
 }
 
+// Welcome Chatbot Functionality
+function initChatbot() {
+    const chatbotContainer = document.getElementById('welcomeChatbot');
+    const chatbotTrigger = document.getElementById('chatbotTrigger');
+    
+    if (!chatbotContainer || !chatbotTrigger) return;
+    
+    // Show welcome chatbot after 3 seconds
+    setTimeout(() => {
+        showWelcomeChatbot();
+    }, 3000);
+    
+    // Auto-hide chatbot after 15 seconds if not interacted with
+    setTimeout(() => {
+        if (chatbotContainer.classList.contains('active')) {
+            closeChatbot();
+        }
+    }, 18000);
+}
+
+function showWelcomeChatbot() {
+    const chatbotContainer = document.getElementById('welcomeChatbot');
+    const chatbotTrigger = document.getElementById('chatbotTrigger');
+    
+    if (chatbotContainer && chatbotTrigger) {
+        chatbotContainer.classList.add('active');
+        chatbotTrigger.classList.add('hidden');
+    }
+}
+
+function openChatbot() {
+    const chatbotContainer = document.getElementById('welcomeChatbot');
+    const chatbotTrigger = document.getElementById('chatbotTrigger');
+    
+    if (chatbotContainer && chatbotTrigger) {
+        chatbotContainer.classList.add('active');
+        chatbotTrigger.classList.add('hidden');
+    }
+}
+
+function closeChatbot() {
+    const chatbotContainer = document.getElementById('welcomeChatbot');
+    const chatbotTrigger = document.getElementById('chatbotTrigger');
+    
+    if (chatbotContainer && chatbotTrigger) {
+        chatbotContainer.classList.remove('active');
+        chatbotTrigger.classList.remove('hidden');
+    }
+}
+
+function navigateToServices() {
+    closeChatbot();
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+function navigateToContact() {
+    closeChatbot();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Focus on the first form field after scrolling
+        setTimeout(() => {
+            const firstInput = contactSection.querySelector('input, textarea');
+            if (firstInput) {
+                firstInput.focus();
+            }
+        }, 800);
+    }
+}
+
+// Add these to the existing initializeApp function
+function setupChatbot() {
+    initChatbot();
+}
+
 // Export functions for testing or external use
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -1078,6 +1158,10 @@ if (typeof module !== 'undefined' && module.exports) {
         showLoading,
         openWhatsApp,
         resetTracking,
-        scrollToSection
+        scrollToSection,
+        openChatbot,
+        closeChatbot,
+        navigateToServices,
+        navigateToContact
     };
 }

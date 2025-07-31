@@ -34,6 +34,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **Focus on Transit**: Repositioned messaging throughout the site to emphasize "Transit" over "Logistics" as the primary service focus, updating hero subtitle, about section, services descriptions, and footer content
 - **Default Language Changed to English**: Updated default language from French to English across the website, including HTML meta tags, navigation, hero section, services, and all static content
 - **Updated Gallery Images**: Replaced transport fleet image with professional white trucks photo and warehouse section with authentic warehouse facility showing blue/orange racking systems and forklift operations
+- **Added Welcome Chatbot**: Implemented an interactive welcome chatbot that appears 3 seconds after page load, featuring bilingual support (French/English), navigation shortcuts to services and contact sections, WhatsApp integration, and professional maritime-themed design with ship icons
 - Verified all website functionality works correctly in Replit environment
 
 ## User Preferences

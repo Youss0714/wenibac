@@ -658,6 +658,55 @@
         <div class="loading-spinner"></div>
     </div>
 
+    <!-- Welcome Chatbot -->
+    <div id="welcomeChatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-ship"></i>
+            </div>
+            <div class="chatbot-info">
+                <h4 data-translate="chatbot.name">Assistant Wenibac</h4>
+                <span data-translate="chatbot.status">En ligne</span>
+            </div>
+            <button class="chatbot-close" onclick="closeChatbot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages">
+            <div class="chatbot-message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-ship"></i>
+                </div>
+                <div class="message-content">
+                    <p data-translate="chatbot.welcome">Bienvenue chez Wenibac Advanced Shipping Ltd ! 👋</p>
+                    <p data-translate="chatbot.intro">Je suis là pour vous aider avec vos besoins en transit et transport maritime. Comment puis-je vous assister aujourd'hui ?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-actions">
+            <button class="chatbot-action" onclick="navigateToServices()">
+                <i class="fas fa-cogs"></i>
+                <span data-translate="chatbot.services">Nos Services</span>
+            </button>
+            <button class="chatbot-action" onclick="navigateToContact()">
+                <i class="fas fa-phone"></i>
+                <span data-translate="chatbot.contact">Nous Contacter</span>
+            </button>
+            <button class="chatbot-action" onclick="openWhatsApp()">
+                <i class="fab fa-whatsapp"></i>
+                <span data-translate="chatbot.whatsapp">WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chatbot Trigger Button -->
+    <div id="chatbotTrigger" class="chatbot-trigger" onclick="openChatbot()">
+        <i class="fas fa-comments"></i>
+        <div class="chatbot-notification">
+            <span data-translate="chatbot.notification">Nouveau message</span>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="translations.js"></script>
     <script src="script.js"></script>

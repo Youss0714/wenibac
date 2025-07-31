@@ -161,7 +161,17 @@ const translations = {
         'form.success': 'Merci pour votre message ! Nous vous contacterons bientôt.',
         
         // WhatsApp
-        'whatsapp.default_message': 'Bonjour, je souhaiterais obtenir plus d\'informations sur vos services.'
+        'whatsapp.default_message': 'Bonjour, je souhaiterais obtenir plus d\'informations sur vos services.',
+        
+        // Chatbot
+        'chatbot.name': 'Assistant Wenibac',
+        'chatbot.status': 'En ligne',
+        'chatbot.welcome': 'Bienvenue chez Wenibac Advanced Shipping Ltd ! 👋',
+        'chatbot.intro': 'Je suis là pour vous aider avec vos besoins en transit et transport maritime. Comment puis-je vous assister aujourd\'hui ?',
+        'chatbot.services': 'Nos Services',
+        'chatbot.contact': 'Nous Contacter',
+        'chatbot.whatsapp': 'WhatsApp',
+        'chatbot.notification': 'Nouveau message'
     },
     
     en: {
@@ -325,7 +335,17 @@ const translations = {
         'form.success': 'Thank you for your message! We will contact you soon.',
         
         // WhatsApp
-        'whatsapp.default_message': 'Hello, I would like to get more information about your services.'
+        'whatsapp.default_message': 'Hello, I would like to get more information about your services.',
+        
+        // Chatbot
+        'chatbot.name': 'Wenibac Assistant',
+        'chatbot.status': 'Online',
+        'chatbot.welcome': 'Welcome to Wenibac Advanced Shipping Ltd! 👋',
+        'chatbot.intro': 'I\'m here to help you with your transit and maritime transport needs. How can I assist you today?',
+        'chatbot.services': 'Our Services',
+        'chatbot.contact': 'Contact Us',
+        'chatbot.whatsapp': 'WhatsApp',
+        'chatbot.notification': 'New message'
     }
 };
 
