@@ -92,6 +92,8 @@ const translations = {
         'about.values.innovation': 'Innovation continue',
         
         'about.location.title': 'Notre Localisation',
+        'about.location.directions': 'Obtenir des directions',
+        'about.location.view_map': 'Voir sur Google Maps',
         
         // Gallery section
         'gallery.title': 'Galerie',
@@ -254,6 +256,8 @@ const translations = {
         'about.values.innovation': 'Continuous innovation',
         
         'about.location.title': 'Our Location',
+        'about.location.directions': 'Get directions',
+        'about.location.view_map': 'View on Google Maps',
         
         // Gallery section
         'gallery.title': 'Gallery',
