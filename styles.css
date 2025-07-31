@@ -270,7 +270,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('assets/images/tema-port-hero.png') center center / cover no-repeat,
+    background: url('assets/images/tema-port-hero.png?v=1') center center / cover no-repeat,
                 linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
     overflow: hidden;
 }
