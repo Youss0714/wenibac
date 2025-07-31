@@ -23,6 +23,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - Implemented automatic image carousel rotation for cargo section with indicators and hover controls
 - Replaced SVG port illustration with authentic aerial photo of Tema Port showing cranes and container operations
 - Updated hero section background images with new spectacular photos of container ships at Tema Port with blue cranes
+- Replaced operations section SVG with authentic photo of port crane handling MSC containers
 - Verified all website functionality works correctly in Replit environment
 
 ## User Preferences
