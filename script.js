@@ -451,11 +451,13 @@ function setupLazyLoading() {
 function setupGoogleMaps() {
     // This function will be called when Google Maps API is loaded
     window.initMap = function() {
-        const temaLocation = { lat: 5.6037, lng: 0.0082 }; // Tema, Ghana coordinates
+        // GIFF Complex, Tema Port coordinates (more precise location)
+        const giffComplexLocation = { lat: 5.6152, lng: 0.0167 }; // GIFF Complex, Tema Port
         
         const map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: temaLocation,
+            zoom: 17,
+            center: giffComplexLocation,
+            mapTypeId: 'roadmap',
             styles: [
                 {
                     featureType: 'water',
@@ -466,12 +468,17 @@ function setupGoogleMaps() {
                     featureType: 'landscape',
                     elementType: 'geometry',
                     stylers: [{ color: '#f3f4f6' }]
+                },
+                {
+                    featureType: 'poi.business',
+                    elementType: 'labels',
+                    stylers: [{ visibility: 'on' }]
                 }
             ]
         });
         
         const marker = new google.maps.Marker({
-            position: temaLocation,
+            position: giffComplexLocation,
             map: map,
             title: 'Wenibac Advanced Shipping Ltd.',
             icon: {
@@ -486,9 +493,21 @@ function setupGoogleMaps() {
         
         const infoWindow = new google.maps.InfoWindow({
             content: `
-                <div style="padding: 10px; font-family: Inter, sans-serif;">
-                    <h3 style="margin: 0 0 5px 0; color: #1e3a8a;">Wenibac Advanced Shipping Ltd.</h3>
-                    <p style="margin: 0; color: #6b7280;">GIFF Complex, Room 209<br>Tema, Ghana</p>
+                <div style="padding: 15px; font-family: Inter, sans-serif; max-width: 250px;">
+                    <h3 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 16px; font-weight: 600;">Wenibac Advanced Shipping Ltd.</h3>
+                    <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 14px; line-height: 1.4;">
+                        <strong>GIFF Complex, Room 209</strong><br>
+                        Tema Port, Ghana
+                    </p>
+                    <div style="margin: 8px 0; color: #374151; font-size: 13px;">
+                        <p style="margin: 2px 0;"><i class="fas fa-phone" style="color: #3b82f6; width: 16px;"></i> +233303214304</p>
+                        <p style="margin: 2px 0;"><i class="fas fa-envelope" style="color: #3b82f6; width: 16px;"></i> wenibac67@gmail.com</p>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=5.6152,0.0167" 
+                       target="_blank" 
+                       style="display: inline-block; margin-top: 8px; padding: 6px 12px; background: #3b82f6; color: white; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: 500;">
+                        Obtenir des directions
+                    </a>
                 </div>
             `
         });

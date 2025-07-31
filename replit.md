@@ -6,11 +6,12 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 
 ## Recent Changes
 
-**July 30, 2025:**
+**July 30-31, 2025:**
 - Enhanced website with professional shipping imagery
 - Created 5 custom SVG illustrations: cargo ship, port operations, warehouse, team work, truck transport
 - Updated gallery section with realistic shipping images and hover overlay effects
-- Added professional hero background featuring port scene with cargo ships and cranes
+- Replaced hero background with authentic Tema Port photo showing real containers and port facilities
+- Added Google Maps integration with precise GIFF Complex location and direction buttons
 - Updated contact information with correct email: wenibac67@gmail.com
 - Updated phone number to +233303214304 throughout website including WhatsApp integration
 - Improved visual appeal and professional appearance across all sections
