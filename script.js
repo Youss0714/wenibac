@@ -24,6 +24,7 @@ function initializeApp() {
     setupScrollEffects();
     setupTestimonials();
     setupContactForm();
+    setupHeroButtons();
     setupLazyLoading();
     setupGoogleMaps();
     setupAnimations();
@@ -582,9 +583,54 @@ function throttle(func, limit) {
     };
 }
 
+// Hero buttons functionality
+function setupHeroButtons() {
+    // Quote button functionality
+    const quoteBtn = document.querySelector('.btn-primary[data-translate="hero.quote_btn"]');
+    const learnMoreBtn = document.querySelector('.btn-secondary[data-translate="hero.learn_more"]');
+    
+    if (quoteBtn) {
+        quoteBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Scroll to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Focus on the first form field after scrolling
+                setTimeout(() => {
+                    const firstInput = contactSection.querySelector('input, textarea');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 800);
+            }
+        });
+    }
+    
+    if (learnMoreBtn) {
+        learnMoreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Scroll to services section
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+}
+
 // WhatsApp integration
 function openWhatsApp(message = '') {
-    const phone = '233XXXXXXXXX'; // Replace with actual WhatsApp number
+    const phone = '233303214304'; // Updated with correct WhatsApp number
     const defaultMessage = getTranslation('whatsapp.default_message', currentLanguage) || 
         'Bonjour, je souhaiterais obtenir plus d\'informations sur vos services.';
     
