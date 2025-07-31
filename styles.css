@@ -400,6 +400,43 @@ body {
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
+/* Hero-specific button styles for better contrast */
+.hero-actions .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-actions .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color);
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero-actions .btn-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.hero-actions .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
