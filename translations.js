@@ -15,7 +15,7 @@ const translations = {
         
         // Hero section
         'hero.title': 'Vos marchandises, notre priorité',
-        'hero.subtitle': 'Solutions de transport et de logistique professionnelles au port de Tema, Ghana',
+        'hero.subtitle': 'Solutions de transit et de transport professionnelles au port de Tema, Ghana',
         'hero.quote_btn': 'Demandez une cotation gratuite',
         'hero.learn_more': 'En savoir plus',
         'hero.track_btn': 'Suivre ma cargaison',
@@ -35,7 +35,7 @@ const translations = {
         
         // Services section
         'services.title': 'Nos Services',
-        'services.subtitle': 'Des solutions complètes pour tous vos besoins logistiques',
+        'services.subtitle': 'Des solutions complètes pour tous vos besoins de transit',
         'services.learn_more': 'En savoir plus',
         
         'services.customs.title': 'Douane & Transit',
@@ -77,13 +77,13 @@ const translations = {
         
         // About section
         'about.title': 'À Propos de Nous',
-        'about.subtitle': 'Une expertise reconnue dans le transport et la logistique',
+        'about.subtitle': 'Une expertise reconnue dans le transit et le transport',
         
         'about.history.title': 'Notre Histoire',
-        'about.history.text': 'Fondée par M. Yacubu Dawuda, Wenibac Advanced Shipping Ltd est née d\'une vision claire : faciliter les échanges commerciaux en Afrique et offrir aux entreprises un partenaire logistique fiable, rapide et transparent.\n\nFort de plus de 30 années d\'expérience dans le domaine du transit, de l\'import-export et de la logistique, M. Yacubu Dawuda a bâti Wenibac sur des valeurs de rigueur, d\'efficacité et de service client irréprochable. Grâce à cette expertise, l\'entreprise s\'est imposée comme une référence au Port de Tema (Ghana), où elle est officiellement agréée comme agence de transit.\n\nAu fil des décennies, Wenibac a élargi son champ d\'action pour répondre aux besoins variés de ses clients :\n\n• Transit, import & export de marchandises\n• Logistique et transport multimodal (maritime, terrestre, aérien)\n• Dédouanement et formalités douanières\n• Trading et négoce général\n\nAvec une équipe expérimentée et engagée, Wenibac accompagne chaque client à chaque étape, en veillant à réduire les délais et les coûts tout en garantissant la sécurité des marchandises.\n\nAujourd\'hui, Wenibac Advanced Shipping Ltd n\'est pas seulement un prestataire de services : c\'est un partenaire stratégique pour réussir dans le commerce international.',
+        'about.history.text': 'Fondée par M. Yacubu Dawuda, Wenibac Advanced Shipping Ltd est née d\'une vision claire : faciliter les échanges commerciaux en Afrique et offrir aux entreprises un partenaire de transit fiable, rapide et transparent.\n\nFort de plus de 30 années d\'expérience dans le domaine du transit, de l\'import-export et du transport, M. Yacubu Dawuda a bâti Wenibac sur des valeurs de rigueur, d\'efficacité et de service client irréprochable. Grâce à cette expertise, l\'entreprise s\'est imposée comme une référence au Port de Tema (Ghana), où elle est officiellement agréée comme agence de transit.\n\nAu fil des décennies, Wenibac a élargi son champ d\'action pour répondre aux besoins variés de ses clients :\n\n• Transit, import & export de marchandises\n• Transport multimodal (maritime, terrestre, aérien)\n• Dédouanement et formalités douanières\n• Trading et négoce général\n\nAvec une équipe expérimentée et engagée, Wenibac accompagne chaque client à chaque étape, en veillant à réduire les délais et les coûts tout en garantissant la sécurité des marchandises.\n\nAujourd\'hui, Wenibac Advanced Shipping Ltd n\'est pas seulement un prestataire de services : c\'est un partenaire stratégique pour réussir dans le commerce international.',
         
         'about.mission.title': 'Notre Mission',
-        'about.mission.text': 'Faciliter les échanges commerciaux en offrant des solutions logistiques innovantes, fiables et personnalisées. Nous nous engageons à être le partenaire de confiance de nos clients dans leur développement commercial.',
+        'about.mission.text': 'Faciliter les échanges commerciaux en offrant des solutions de transit innovantes, fiables et personnalisées. Nous nous engageons à être le partenaire de confiance de nos clients dans leur développement commercial.',
         
         'about.values.title': 'Nos Valeurs',
         'about.values.reliability': 'Fiabilité et ponctualité',
@@ -133,7 +133,7 @@ const translations = {
         'contact.whatsapp.button': 'Ouvrir WhatsApp',
         
         // Footer
-        'footer.description': 'Votre partenaire de confiance pour tous vos besoins en transport et logistique au Ghana et en Afrique de l\'Ouest.',
+        'footer.description': 'Votre partenaire de confiance pour tous vos besoins en transit et transport au Ghana et en Afrique de l\'Ouest.',
         
         'footer.services.title': 'Services',
         'footer.services.customs': 'Douane & Transit',
@@ -177,7 +177,7 @@ const translations = {
         
         // Hero section
         'hero.title': 'Your cargo, our priority',
-        'hero.subtitle': 'Professional transport and logistics solutions at Tema port, Ghana',
+        'hero.subtitle': 'Professional transit and transport solutions at Tema port, Ghana',
         'hero.quote_btn': 'Request a free quote',
         'hero.learn_more': 'Learn more',
         'hero.track_btn': 'Track my cargo',
@@ -197,7 +197,7 @@ const translations = {
         
         // Services section
         'services.title': 'Our Services',
-        'services.subtitle': 'Complete solutions for all your logistics needs',
+        'services.subtitle': 'Complete solutions for all your transit needs',
         'services.learn_more': 'Learn more',
         
         'services.customs.title': 'Customs & Transit',
@@ -239,13 +239,13 @@ const translations = {
         
         // About section
         'about.title': 'About Us',
-        'about.subtitle': 'Recognized expertise in transport and logistics',
+        'about.subtitle': 'Recognized expertise in transit and transport',
         
         'about.history.title': 'Our History',
-        'about.history.text': 'Founded by Mr. Yacubu Dawuda, Wenibac Advanced Shipping Ltd was born from a clear vision: to facilitate trade in Africa and offer businesses a reliable, fast and transparent logistics partner.\n\nWith over 30 years of experience in transit, import-export and logistics, Mr. Yacubu Dawuda built Wenibac on values of rigor, efficiency and impeccable customer service. Thanks to this expertise, the company has established itself as a reference at the Port of Tema (Ghana), where it is officially approved as a transit agency.\n\nOver the decades, Wenibac has expanded its scope of action to meet the varied needs of its clients:\n\n• Transit, import & export of goods\n• Logistics and multimodal transport (maritime, land, air)\n• Customs clearance and customs formalities\n• Trading and general commerce\n\nWith an experienced and committed team, Wenibac supports each client at every step, ensuring reduced delays and costs while guaranteeing the safety of goods.\n\nToday, Wenibac Advanced Shipping Ltd is not just a service provider: it is a strategic partner for success in international trade.',
+        'about.history.text': 'Founded by Mr. Yacubu Dawuda, Wenibac Advanced Shipping Ltd was born from a clear vision: to facilitate trade in Africa and offer businesses a reliable, fast and transparent transit partner.\n\nWith over 30 years of experience in transit, import-export and transport, Mr. Yacubu Dawuda built Wenibac on values of rigor, efficiency and impeccable customer service. Thanks to this expertise, the company has established itself as a reference at the Port of Tema (Ghana), where it is officially approved as a transit agency.\n\nOver the decades, Wenibac has expanded its scope of action to meet the varied needs of its clients:\n\n• Transit, import & export of goods\n• Multimodal transport (maritime, land, air)\n• Customs clearance and customs formalities\n• Trading and general commerce\n\nWith an experienced and committed team, Wenibac supports each client at every step, ensuring reduced delays and costs while guaranteeing the safety of goods.\n\nToday, Wenibac Advanced Shipping Ltd is not just a service provider: it is a strategic partner for success in international trade.',
         
         'about.mission.title': 'Our Mission',
-        'about.mission.text': 'To facilitate trade by offering innovative, reliable and personalized logistics solutions. We are committed to being our clients\' trusted partner in their commercial development.',
+        'about.mission.text': 'To facilitate trade by offering innovative, reliable and personalized transit solutions. We are committed to being our clients\' trusted partner in their commercial development.',
         
         'about.values.title': 'Our Values',
         'about.values.reliability': 'Reliability and punctuality',
@@ -295,7 +295,7 @@ const translations = {
         'contact.whatsapp.button': 'Open WhatsApp',
         
         // Footer
-        'footer.description': 'Your trusted partner for all your transport and logistics needs in Ghana and West Africa.',
+        'footer.description': 'Your trusted partner for all your transit and transport needs in Ghana and West Africa.',
         
         'footer.services.title': 'Services',
         'footer.services.customs': 'Customs & Transit',
