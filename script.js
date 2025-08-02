@@ -20,18 +20,27 @@ function initializeDOMElements() {
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     // Ensure translations are loaded before initializing
+    console.log('DOM Content Loaded');
+    console.log('Translations available:', typeof translations !== 'undefined');
+    console.log('getTranslation function available:', typeof getTranslation === 'function');
+    
     if (typeof translations !== 'undefined' && typeof getTranslation === 'function') {
         initializeApp();
     } else {
-        console.error('Translations not loaded');
+        console.error('Translations not loaded, retrying...');
         // Retry after a short delay
         setTimeout(() => {
+            console.log('Retry - Translations available:', typeof translations !== 'undefined');
+            console.log('Retry - getTranslation function available:', typeof getTranslation === 'function');
+            
             if (typeof translations !== 'undefined' && typeof getTranslation === 'function') {
                 initializeApp();
             } else {
                 console.error('Translations still not available after retry');
+                // Force initialize without translations for debugging
+                initializeApp();
             }
-        }, 100);
+        }, 200);
     }
 });
 
@@ -124,6 +133,9 @@ function setupLanguageSwitcher() {
 function setLanguage(lang) {
     currentLanguage = lang;
     
+    console.log(`Setting language to: ${lang}`);
+    console.log('getTranslation function available:', typeof getTranslation === 'function');
+    
     // Check if translations are available
     if (typeof getTranslation !== 'function') {
         console.error('Translation function not available');
@@ -139,6 +151,8 @@ function setLanguage(lang) {
     
     // Update all translatable elements
     const elements = document.querySelectorAll('[data-translate]');
+    console.log(`Found ${elements.length} elements to translate`);
+    
     elements.forEach(element => {
         const key = element.getAttribute('data-translate');
         const translation = getTranslation(key, lang);
@@ -149,8 +163,9 @@ function setLanguage(lang) {
             } else {
                 element.textContent = translation;
             }
+            console.log(`✓ Translated ${key}: ${translation.substring(0, 50)}${translation.length > 50 ? '...' : ''}`);
         } else {
-            console.warn(`Translation missing for key: ${key} in language: ${lang}`);
+            console.warn(`✗ Translation missing for key: ${key} in language: ${lang}`);
         }
     });
     
