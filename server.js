@@ -86,11 +86,19 @@ app.post('/api/contact', async (req, res) => {
             });
         }
 
-        // Check if SendGrid is configured
+        // For now, just log the data and create Excel file locally
         if (!process.env.SENDGRID_API_KEY) {
-            return res.status(500).json({
-                success: false,
-                message: 'Service email non configuré. Veuillez contacter l\'administrateur.'
+            console.log('SendGrid not configured. Saving form data locally.');
+            
+            // Create Excel file for download/manual handling
+            const { filename, filepath } = createExcelFile(formData);
+            
+            console.log(`Form data saved to Excel file: ${filename}`);
+            
+            return res.json({
+                success: true,
+                message: 'Votre demande de devis a été reçue avec succès. Nous vous contacterons bientôt.',
+                filename: filename
             });
         }
 
