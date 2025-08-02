@@ -1900,7 +1900,7 @@ body {
 /* Welcome Chatbot Styles */
 .chatbot-container {
     position: fixed;
-    bottom: 100px;
+    bottom: 140px;
     right: 20px;
     width: 380px;
     max-height: 550px;
@@ -2168,7 +2168,7 @@ body {
 /* Chatbot Trigger Button */
 .chatbot-trigger {
     position: fixed;
-    bottom: 20px;
+    bottom: 60px;
     right: 20px;
     width: 65px;
     height: 65px;
@@ -2242,11 +2242,11 @@ body {
         width: calc(100vw - 40px);
         right: 20px;
         left: 20px;
-        bottom: 90px;
+        bottom: 130px;
     }
     
     .chatbot-trigger {
-        bottom: 15px;
+        bottom: 55px;
         right: 15px;
         width: 55px;
         height: 55px;
@@ -2259,7 +2259,7 @@ body {
         width: calc(100vw - 20px);
         right: 10px;
         left: 10px;
-        bottom: 80px;
+        bottom: 120px;
         max-height: 400px;
     }
     

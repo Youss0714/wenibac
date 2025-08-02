@@ -40,6 +40,10 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **August 2, 2025**: Created dedicated cargo tracking page (suivi.html) featuring major shipping carriers (Maersk, CMA CGM, MSC, Hapag-Lloyd, COSCO, ONE) with official logos, real tracking URLs, search functionality, hover effects, tooltips, and full bilingual support
 - **August 2, 2025**: Removed old tracking section from main page to avoid duplication, now redirecting all tracking functionality to dedicated suivi.html page
 - **August 2, 2025**: Enhanced chatbot appearance with modern design improvements including gradient backgrounds, animated elements, improved hover effects, custom scrollbars, glassmorphism effects, and advanced CSS animations for a premium user experience
+- **August 2, 2025**: Successfully migrated project from Replit Agent to standard Replit environment with full Node.js server functionality
+- **August 2, 2025**: Created custom bot logo SVG and replaced ship icons in chatbot with professional bot avatar
+- **August 2, 2025**: Adjusted chatbot positioning higher on screen (moved from bottom: 20px to bottom: 60px for trigger, bottom: 100px to bottom: 140px for container) for better user experience
+- **August 2, 2025**: Fixed all missing translation keys for footer sections and chatbot in both French and English languages
 
 ## User Preferences
 
