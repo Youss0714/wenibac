@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi de Cargaison - Wenibac Advanced Shipping Ltd.</title>
+    <meta name="description" content="Suivez vos cargaisons avec les principaux transporteurs maritimes - Maersk, CMA CGM, MSC, Hapag-Lloyd et plus encore.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-white);
+            box-shadow: var(--shadow-md);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main {
+            padding: 3rem 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--bg-white);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-gray);
+        }
+
+        /* Carriers Grid */
+        .carriers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .carrier-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInCard 0.6s ease-out forwards;
+        }
+
+        .carrier-card:nth-child(1) { animation-delay: 0.1s; }
+        .carrier-card:nth-child(2) { animation-delay: 0.2s; }
+        .carrier-card:nth-child(3) { animation-delay: 0.3s; }
+        .carrier-card:nth-child(4) { animation-delay: 0.4s; }
+        .carrier-card:nth-child(5) { animation-delay: 0.5s; }
+        .carrier-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .carrier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .carrier-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .carrier-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .carrier-logo {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 2px solid var(--border-color);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .carrier-logo svg {
+            width: 60px;
+            height: auto;
+        }
+
+        .carrier-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .carrier-info .market-share {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            background: var(--bg-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .carrier-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .carrier-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+        }
+
+        .track-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .track-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .track-button:hover::before {
+            left: 100%;
+        }
+
+        .track-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            background: var(--text-dark);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--text-dark);
+        }
+
+        .carrier-logo:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-10px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInCard {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .carriers-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .carrier-card {
+                padding: 1.5rem;
+            }
+
+            .carrier-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .carrier-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-ship"></i>
+                    Wenibac Advanced Shipping
+                </a>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Retour à l'accueil</span>
+                    </a>
+                    <div class="tracking-lang-toggle">
+                        <button class="lang-btn" onclick="toggleTrackingLanguage()" style="background: var(--secondary-color); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                            <span id="currentTrackingLang">FR</span>
+                            <i class="fas fa-globe"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Suivi de Cargaison</h1>
+                <p class="page-subtitle">
+                    Accédez directement aux plateformes de suivi des principaux transporteurs maritimes mondiaux. 
+                    Suivez vos conteneurs en temps réel avec précision et simplicité.
+                </p>
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Rechercher un transporteur..." id="searchInput">
+                </div>
+            </div>
+
+            <div class="carriers-grid" id="carriersGrid">
+                <!-- Maersk -->
+                <div class="carrier-card" data-name="maersk">
+                    <div class="carrier-header">
+                        <div class="carrier-logo">
+                            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Maersk Star Logo -->
+                                <rect x="10" y="20" width="60" height="60" rx="8" fill="#00A1E0"/>
+                                <polygon points="40,30 45,42 57,42 48,50 52,62 40,55 28,62 32,50 23,42 35,42" fill="white"/>
+                                <text x="80" y="45" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">MAERSK</text>
+                                <text x="80" y="60" font-family="Arial, sans-serif" font-size="10" fill="#666">A.P. Moller - Maersk</text>
+                            </svg>
+                            <div class="tooltip">
+                                Leader mondial du transport maritime depuis 1904. L'étoile à 7 branches est utilisée depuis 1886.
+                            </div>
+                        </div>
+                        <div class="carrier-info">
+                            <h3>Maersk</h3>
+                            <span class="market-share">Part de marché: 17.0%</span>
+                        </div>
+                    </div>
+                    <p class="carrier-description">
+                        Leader mondial en logistique intégrée, Maersk offre un suivi avancé avec géolocalisation en temps réel, 
+                        notifications automatiques et gestion complète de votre chaîne d'approvisionnement.
+                    </p>
+                    <div class="carrier-stats">
+                        <div class="stat">
+                            <div class="stat-value">4.5M</div>
+                            <div class="stat-label">TEUs Capacité</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">700+</div>
+                            <div class="stat-label">Navires</div>
+                        </div>
+                    </div>
+                    <button class="track-button" onclick="window.open('https://www.maersk.com/tracking/', '_blank')">
+                        <i class="fas fa-external-link-alt"></i>
+                        Suivre votre cargaison
+                    </button>
+                </div>
+
+                <!-- CMA CGM -->
+                <div class="carrier-card" data-name="cma cgm">
+                    <div class="carrier-header">
+                        <div class="carrier-logo">
+                            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- CMA CGM Logo -->
+                                <rect x="10" y="25" width="50" height="50" rx="5" fill="#E31E24"/>
+                                <rect x="15" y="30" width="20" height="40" rx="2" fill="white"/>
+                                <rect x="40" y="30" width="15" height="40" rx="2" fill="#003366"/>
+                                <text x="70" y="40" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#E31E24">CMA CGM</text>
+                                <text x="70" y="55" font-family="Arial, sans-serif" font-size="8" fill="#666">Shipping the Future</text>
+                            </svg>
+                            <div class="tooltip">
+                                3ème transporteur mondial. Compagnie française fondée en 1978, spécialisée dans tous types de cargaisons.
+                            </div>
+                        </div>
+                        <div class="carrier-info">
+                            <h3>CMA CGM</h3>
+                            <span class="market-share">Part de marché: 13.4%</span>
+                        </div>
+                    </div>
+                    <p class="carrier-description">
+                        Compagnie française leader, CMA CGM propose un suivi détaillé avec position des navires sur carte interactive, 
+                        documents centralisés et gestion en ligne des factures et paiements.
+                    </p>
+                    <div class="carrier-stats">
+                        <div class="stat">
+                            <div class="stat-value">3.8M</div>
+                            <div class="stat-label">TEUs Capacité</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">593</div>
+                            <div class="stat-label">Navires</div>
+                        </div>
+                    </div>
+                    <button class="track-button" onclick="window.open('https://www.cma-cgm.com/ebusiness/tracking', '_blank')">
+                        <i class="fas fa-external-link-alt"></i>
+                        Suivre votre cargaison
+                    </button>
+                </div>
+
+                <!-- MSC -->
+                <div class="carrier-card" data-name="msc mediterranean">
+                    <div class="carrier-header">
+                        <div class="carrier-logo">
+                            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- MSC Logo -->
+                                <circle cx="35" cy="50" r="25" fill="#003366"/>
+                                <text x="35" y="55" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">MSC</text>
+                                <text x="75" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#003366">Mediterranean</text>
+                                <text x="75" y="55" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#003366">Shipping Company</text>
+                                <text x="75" y="68" font-family="Arial, sans-serif" font-size="8" fill="#666">World's Largest Container Fleet</text>
+                            </svg>
+                            <div class="tooltip">
+                                Plus grande compagnie de transport maritime au monde. Basée en Suisse, dessert 520 ports dans 230 pays.
+                            </div>
+                        </div>
+                        <div class="carrier-info">
+                            <h3>MSC</h3>
+                            <span class="market-share">Part de marché: 20.2%</span>
+                        </div>
+                    </div>
+                    <p class="carrier-description">
+                        Plus grande flotte de conteneurs au monde, MSC offre un réseau global incomparable avec un suivi précis 
+                        et des solutions de transport intégrées pour tous types de marchandises.
+                    </p>
+                    <div class="carrier-stats">
+                        <div class="stat">
+                            <div class="stat-value">6.4M</div>
+                            <div class="stat-label">TEUs Capacité</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">800+</div>
+                            <div class="stat-label">Navires</div>
+                        </div>
+                    </div>
+                    <button class="track-button" onclick="window.open('https://www.msc.com/track-a-shipment', '_blank')">
+                        <i class="fas fa-external-link-alt"></i>
+                        Suivre votre cargaison
+                    </button>
+                </div>
+
+                <!-- Hapag-Lloyd -->
+                <div class="carrier-card" data-name="hapag lloyd">
+                    <div class="carrier-header">
+                        <div class="carrier-logo">
+                            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Hapag-Lloyd Logo -->
+                                <rect x="10" y="30" width="45" height="40" rx="3" fill="#FF6900"/>
+                                <text x="32" y="52" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">HL</text>
+                                <text x="65" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FF6900">Hapag-Lloyd</text>
+                                <text x="65" y="55" font-family="Arial, sans-serif" font-size="8" fill="#666">Quality. Reliability. Efficiency.</text>
+                                <rect x="65" y="60" width="25" height="2" fill="#FF6900"/>
+                            </svg>
+                            <div class="tooltip">
+                                Compagnie allemande historique fondée en 1970. Spécialisée dans les services liner et la logistique.
+                            </div>
+                        </div>
+                        <div class="carrier-info">
+                            <h3>Hapag-Lloyd</h3>
+                            <span class="market-share">Part de marché: 7.8%</span>
+                        </div>
+                    </div>
+                    <p class="carrier-description">
+                        Compagnie allemande de référence offrant un service de qualité avec suivi détaillé des mouvements planifiés 
+                        et réels, interface intuitive et notifications proactives.
+                    </p>
+                    <div class="carrier-stats">
+                        <div class="stat">
+                            <div class="stat-value">1.8M</div>
+                            <div class="stat-label">TEUs Capacité</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">250+</div>
+                            <div class="stat-label">Navires</div>
+                        </div>
+                    </div>
+                    <button class="track-button" onclick="window.open('https://www.hapag-lloyd.com/en/online-business/track/track-by-container-solution.html', '_blank')">
+                        <i class="fas fa-external-link-alt"></i>
+                        Suivre votre cargaison
+                    </button>
+                </div>
+
+                <!-- COSCO -->
+                <div class="carrier-card" data-name="cosco china">
+                    <div class="carrier-header">
+                        <div class="carrier-logo">
+                            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- COSCO Logo -->
+                                <circle cx="35" cy="50" r="22" fill="#C41E3A"/>
+                                <text x="35" y="45" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">COSCO</text>
+                                <text x="35" y="57" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">SHIPPING</text>
+                                <text x="65" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#C41E3A">COSCO SHIPPING</text>
+                                <text x="65" y="55" font-family="Arial, sans-serif" font-size="8" fill="#666">China Ocean Shipping Company</text>
+                                <text x="65" y="68" font-family="Arial, sans-serif" font-size="8" fill="#666">Global Shipping Solutions</text>
+                            </svg>
+                            <div class="tooltip">
+                                Géant chinois du shipping. 4ème transporteur mondial avec une forte présence sur les routes Asie-Europe.
+                            </div>
+                        </div>
+                        <div class="carrier-info">
+                            <h3>COSCO Shipping</h3>
+                            <span class="market-share">Part de marché: 12.3%</span>
+                        </div>
+                    </div>
+                    <p class="carrier-description">
+                        Leader chinois du transport maritime, COSCO Shipping offre des solutions globales avec un suivi avancé, 
+                        particulièrement efficace sur les routes commerciales Asie-Europe et transpacifiques.
+                    </p>
+                    <div class="carrier-stats">
+                        <div class="stat">
+                            <div class="stat-value">3.2M</div>
+                            <div class="stat-label">TEUs Capacité</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">540+</div>
+                            <div class="stat-label">Navires</div>
+                        </div>
+                    </div>
+                    <button class="track-button" onclick="window.open('https://elines.coscoshipping.com/ebusiness/cargoTracking', '_blank')">
+                        <i class="fas fa-external-link-alt"></i>
+                        Suivre votre cargaison
+                    </button>
+                </div>
+
+                <!-- ONE (Ocean Network Express) -->
+                <div class="carrier-card" data-name="one ocean network">
+                    <div class="carrier-header">
+                        <div class="carrier-logo">
+                            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- ONE Logo -->
+                                <rect x="10" y="25" width="50" height="50" rx="25" fill="#E31E24"/>
+                                <text x="35" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">ONE</text>
+                                <text x="70" y="40" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#E31E24">Ocean Network</text>
+                                <text x="70" y="55" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#E31E24">Express</text>
+                                <text x="70" y="68" font-family="Arial, sans-serif" font-size="8" fill="#666">Japanese Excellence</text>
+                            </svg>
+                            <div class="tooltip">
+                                Alliance japonaise créée en 2018. Fusion de K Line, MOL et NYK. Excellence du service japonais.
+                            </div>
+                        </div>
+                        <div class="carrier-info">
+                            <h3>Ocean Network Express</h3>
+                            <span class="market-share">Part de marché: 6.8%</span>
+                        </div>
+                    </div>
+                    <p class="carrier-description">
+                        Alliance japonaise moderne alliant tradition et innovation, ONE propose un suivi de haute précision 
+                        avec interface digitale avancée et service client d'excellence japonaise.
+                    </p>
+                    <div class="carrier-stats">
+                        <div class="stat">
+                            <div class="stat-value">1.6M</div>
+                            <div class="stat-label">TEUs Capacité</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">230+</div>
+                            <div class="stat-label">Navires</div>
+                        </div>
+                    </div>
+                    <button class="track-button" onclick="window.open('https://ecomm.one-line.com/ecom/CUP_HOM_3301.do', '_blank')">
+                        <i class="fas fa-external-link-alt"></i>
+                        Suivre votre cargaison
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Translations -->
+    <script src="translations-suivi.js"></script>
+    
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const carriersGrid = document.getElementById('carriersGrid');
+        const carrierCards = document.querySelectorAll('.carrier-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            carrierCards.forEach(card => {
+                const carrierName = card.getAttribute('data-name').toLowerCase();
+                const cardText = card.textContent.toLowerCase();
+                
+                if (carrierName.includes(searchTerm) || cardText.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInCard 0.3s ease-out forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all carrier cards
+        carrierCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add click tracking for analytics (optional)
+        function trackCarrierClick(carrierName) {
+            console.log(`User clicked on ${carrierName} tracking`);
+            // Here you could send analytics data to your tracking service
+        }
+
+        // Enhanced button interactions
+        document.querySelectorAll('.track-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const carrierName = this.closest('.carrier-card').querySelector('h3').textContent;
+                trackCarrierClick(carrierName);
+            });
+        });
+    </script>
+</body>
+</html>

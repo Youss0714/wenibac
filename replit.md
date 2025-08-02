@@ -37,6 +37,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **Added Welcome Chatbot**: Implemented an interactive welcome chatbot that appears 3 seconds after page load, featuring bilingual support (French/English), navigation shortcuts to services and contact sections, WhatsApp integration, and professional maritime-themed design with ship icons
 - Verified all website functionality works correctly in Replit environment
 - **August 2, 2025**: Enhanced contact form with professional shipping quote fields including departure/arrival countries, addresses, incoterms, shipping dates, and cargo descriptions - matching modern shipping industry standards
+- **August 2, 2025**: Created dedicated cargo tracking page (suivi.html) featuring major shipping carriers (Maersk, CMA CGM, MSC, Hapag-Lloyd, COSCO, ONE) with official logos, real tracking URLs, search functionality, hover effects, tooltips, and full bilingual support
 
 ## User Preferences
 
@@ -87,6 +88,15 @@ Preferred communication style: Simple, everyday language.
 - **Animation System**: CSS-based animations with JavaScript triggers
 - **SEO Optimization**: Meta tags, structured data, and semantic HTML
 
+### 5. Cargo Tracking System
+- **Dedicated Tracking Page**: Standalone suivi.html page with comprehensive carrier directory
+- **Major Shipping Lines**: Integration with Maersk, CMA CGM, MSC, Hapag-Lloyd, COSCO, and ONE
+- **Official Branding**: Custom SVG logos based on official brand guidelines
+- **Real Tracking URLs**: Direct links to official carrier tracking platforms
+- **Interactive Features**: Search functionality, hover effects, tooltips with carrier information
+- **Bilingual Support**: Complete French/English translation system with dedicated translation file
+- **Responsive Design**: Mobile-optimized layout with animated card reveals
+
 ## Data Flow
 
 ### Client-Side State Management
@@ -128,11 +138,14 @@ Preferred communication style: Simple, everyday language.
 ### File Structure
 ```
 /
-├── index.html          # Main HTML structure
-├── styles.css          # Complete styling system
-├── script.js           # Application logic and interactions
-├── translations.js     # Language translation data
-└── assets/            # Images, favicon, and media files
+├── index.html              # Main HTML structure
+├── suivi.html             # Dedicated cargo tracking page
+├── styles.css             # Complete styling system
+├── script.js              # Application logic and interactions
+├── translations.js        # Main language translation data
+├── translations-suivi.js  # Tracking page translations
+├── server.js              # Node.js Express server for form handling
+└── assets/                # Images, favicon, and media files
 ```
 
 ### Performance Considerations
