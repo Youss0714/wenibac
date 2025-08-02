@@ -44,6 +44,8 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **August 2, 2025**: Created custom bot logo SVG and replaced ship icons in chatbot with professional bot avatar
 - **August 2, 2025**: Adjusted chatbot positioning higher on screen (moved from bottom: 20px to bottom: 60px for trigger, bottom: 100px to bottom: 140px for container) for better user experience
 - **August 2, 2025**: Fixed all missing translation keys for footer sections and chatbot in both French and English languages
+- **August 2, 2025**: Reduced chatbot size for more compact display (320px width, 450px max height) with smaller fonts (13px messages, 13px buttons) to ensure all text is visible and less screen intrusion
+- **August 2, 2025**: Comprehensive SEO optimization including enhanced meta tags, structured data (Schema.org), sitemap.xml, robots.txt, geo-tagging, Open Graph tags, Twitter Cards, hreflang attributes, and semantic HTML improvements for better search engine visibility
 
 ## User Preferences
 

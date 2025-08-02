@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wenibac.replit.app/sitemap.xml
+
+# Main pages
+Allow: /index.html
+Allow: /suivi.html
+
+# Assets
+Allow: /styles.css
+Allow: /script.js
+Allow: /translations.js
+Allow: /translations-suivi.js
+Allow: /assets/
+Allow: /attached_assets/
+
+# Disallow admin/development files
+Disallow: /.replit
+Disallow: /replit.md
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /server.js
+Disallow: /.local/
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Cache and SEO directives
+# Allow search engines to cache pages for up to 1 week
+# Cache-Control: public, max-age=604800
