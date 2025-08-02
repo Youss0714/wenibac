@@ -359,41 +359,49 @@ function clearFieldError(field) {
     errorElement.textContent = '';
 }
 
-function submitForm() {
+async function submitForm() {
     showLoading(true);
     
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        console.log('Form submitted:', data);
+    try {
+        console.log('Submitting form with data:', data);
         
-        // Show success message
-        showFormSuccess();
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
         
-        // Reset form
-        contactForm.reset();
+        const result = await response.json();
         
+        if (response.ok && result.success) {
+            console.log('Form submitted successfully');
+            
+            // Show success message
+            showFormSuccess(result.message);
+            
+            // Reset form
+            contactForm.reset();
+        } else {
+            console.error('Form submission error:', result.message);
+            showFormError(result.message || 'Une erreur est survenue lors de l\'envoi.');
+        }
+        
+    } catch (error) {
+        console.error('Network error:', error);
+        showFormError('Erreur de connexion. Veuillez vérifier votre connexion internet et réessayer.');
+    } finally {
         showLoading(false);
-        
-        // In a real implementation, you would send the data to your server
-        // Example:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // }).then(response => {
-        //     // Handle response
-        // }).catch(error => {
-        //     // Handle error
-        // });
-        
-    }, 2000);
+    }
 }
 
-function showFormSuccess() {
-    const successMessage = getTranslation('form.success', currentLanguage) || 
+function showFormSuccess(customMessage = null) {
+    const successMessage = customMessage || 
+        getTranslation('form.success', currentLanguage) || 
         'Merci pour votre message ! Nous vous contacterons bientôt.';
     
     // Create success notification
@@ -455,6 +463,61 @@ function showFormSuccess() {
             }
         }, 300);
     }, 5000);
+}
+
+function showFormError(errorMessage) {
+    // Create error notification
+    const notification = document.createElement('div');
+    notification.className = 'error-notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>${errorMessage}</span>
+        </div>
+    `;
+    
+    // Add CSS for error notification if not already added
+    if (!document.getElementById('error-notification-styles')) {
+        const styles = document.createElement('style');
+        styles.id = 'error-notification-styles';
+        styles.textContent = `
+            .error-notification {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #ef4444;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                z-index: 10000;
+                animation: slideInRight 0.3s ease-out;
+                max-width: 400px;
+            }
+            
+            .error-notification .notification-content {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .error-notification i {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+            }
+        `;
+        document.head.appendChild(styles);
+    }
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Remove notification after 7 seconds (longer for error messages)
+    setTimeout(() => {
+        if (notification && notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 7000);
 }
 
 function showLoading(show) {
