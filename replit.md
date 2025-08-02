@@ -39,6 +39,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **August 2, 2025**: Enhanced contact form with professional shipping quote fields including departure/arrival countries, addresses, incoterms, shipping dates, and cargo descriptions - matching modern shipping industry standards
 - **August 2, 2025**: Created dedicated cargo tracking page (suivi.html) featuring major shipping carriers (Maersk, CMA CGM, MSC, Hapag-Lloyd, COSCO, ONE) with official logos, real tracking URLs, search functionality, hover effects, tooltips, and full bilingual support
 - **August 2, 2025**: Removed old tracking section from main page to avoid duplication, now redirecting all tracking functionality to dedicated suivi.html page
+- **August 2, 2025**: Enhanced chatbot appearance with modern design improvements including gradient backgrounds, animated elements, improved hover effects, custom scrollbars, glassmorphism effects, and advanced CSS animations for a premium user experience
 
 ## User Preferences
 
