@@ -494,45 +494,141 @@
                 <div class="contact-content">
                     <div class="contact-form-container">
                         <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" data-translate="contact.form.name">Full name</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <span class="error-message"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" data-translate="contact.form.email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone" data-translate="contact.form.phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                    <span class="error-message"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="company" data-translate="contact.form.company">Company</label>
+                                    <input type="text" id="company" name="company">
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="departure_country" data-translate="contact.form.departure_country">Departure country <span class="required">*</span></label>
+                                    <select id="departure_country" name="departure_country" required>
+                                        <option value="" data-translate="contact.form.select_country">-Select-</option>
+                                        <option value="GH">Ghana</option>
+                                        <option value="NG">Nigeria</option>
+                                        <option value="CI">Côte d'Ivoire</option>
+                                        <option value="BF">Burkina Faso</option>
+                                        <option value="ML">Mali</option>
+                                        <option value="TG">Togo</option>
+                                        <option value="BJ">Benin</option>
+                                        <option value="SN">Senegal</option>
+                                        <option value="CN">China</option>
+                                        <option value="IN">India</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="FR">France</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="US">United States</option>
+                                        <option value="AE">UAE</option>
+                                        <option value="TR">Turkey</option>
+                                        <option value="other" data-translate="contact.form.other_country">Other</option>
+                                    </select>
+                                    <span class="error-message"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="arrival_country" data-translate="contact.form.arrival_country">Arrival country <span class="required">*</span></label>
+                                    <select id="arrival_country" name="arrival_country" required>
+                                        <option value="" data-translate="contact.form.select_country">-Select-</option>
+                                        <option value="GH">Ghana</option>
+                                        <option value="NG">Nigeria</option>
+                                        <option value="CI">Côte d'Ivoire</option>
+                                        <option value="BF">Burkina Faso</option>
+                                        <option value="ML">Mali</option>
+                                        <option value="TG">Togo</option>
+                                        <option value="BJ">Benin</option>
+                                        <option value="SN">Senegal</option>
+                                        <option value="CN">China</option>
+                                        <option value="IN">India</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="FR">France</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="US">United States</option>
+                                        <option value="AE">UAE</option>
+                                        <option value="TR">Turkey</option>
+                                        <option value="other" data-translate="contact.form.other_country">Other</option>
+                                    </select>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="departure_address" data-translate="contact.form.departure_address">Departure address</label>
+                                    <input type="text" id="departure_address" name="departure_address" placeholder="Address, city or terminal" data-translate-placeholder="contact.form.address_placeholder">
+                                    <span class="error-message"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="arrival_address" data-translate="contact.form.arrival_address">Arrival address</label>
+                                    <input type="text" id="arrival_address" name="arrival_address" placeholder="Address, city or terminal" data-translate-placeholder="contact.form.address_placeholder">
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="incoterm" data-translate="contact.form.incoterm">Purchase incoterm</label>
+                                    <select id="incoterm" name="incoterm">
+                                        <option value="" data-translate="contact.form.select_incoterm">-Select-</option>
+                                        <option value="EXW">EXW - Ex Works</option>
+                                        <option value="FCA">FCA - Free Carrier</option>
+                                        <option value="CPT">CPT - Carriage Paid To</option>
+                                        <option value="CIP">CIP - Carriage and Insurance Paid</option>
+                                        <option value="DAP">DAP - Delivered At Place</option>
+                                        <option value="DPU">DPU - Delivered At Place Unloaded</option>
+                                        <option value="DDP">DDP - Delivered Duty Paid</option>
+                                        <option value="FAS">FAS - Free Alongside Ship</option>
+                                        <option value="FOB">FOB - Free On Board</option>
+                                        <option value="CFR">CFR - Cost and Freight</option>
+                                        <option value="CIF">CIF - Cost, Insurance and Freight</option>
+                                    </select>
+                                    <small class="form-help" data-translate="contact.form.incoterm_help">This incoterm defines our service or our support begins.</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="shipping_date" data-translate="contact.form.shipping_date">Shipping date</label>
+                                    <input type="date" id="shipping_date" name="shipping_date" placeholder="dd-MM-yyyy">
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
-                                <label for="name" data-translate="contact.form.name">Full name</label>
-                                <input type="text" id="name" name="name" required>
+                                <label for="cargo_description" data-translate="contact.form.cargo_description">Cargo description</label>
+                                <textarea id="cargo_description" name="cargo_description" rows="3" placeholder="Describe your cargo: type, quantity, dimensions, weight..." data-translate-placeholder="contact.form.cargo_placeholder"></textarea>
                                 <span class="error-message"></span>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email" data-translate="contact.form.email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                                <span class="error-message"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone" data-translate="contact.form.phone">Phone</label>
-                                <input type="tel" id="phone" name="phone">
-                                <span class="error-message"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="service" data-translate="contact.form.service">Desired service</label>
-                                <select id="service" name="service">
-                                    <option value="" data-translate="contact.form.select_service">Select a service</option>
-                                    <option value="customs" data-translate="contact.form.customs">Customs & Transit</option>
-                                    <option value="transport" data-translate="contact.form.transport">Transport</option>
-                                    <option value="import_export" data-translate="contact.form.import_export">Import/Export</option>
-                                    <option value="contracts" data-translate="contact.form.contracts">Contracts & Trading</option>
-                                    <option value="consulting" data-translate="contact.form.consulting">Consulting</option>
-                                    <option value="other" data-translate="contact.form.other">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" data-translate="contact.form.message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="additional_message" data-translate="contact.form.additional_message">Additional message</label>
+                                <textarea id="additional_message" name="additional_message" rows="3" placeholder="Any additional information or special requirements..." data-translate-placeholder="contact.form.additional_placeholder"></textarea>
                                 <span class="error-message"></span>
                             </div>
                             
                             <button type="submit" class="btn btn-primary" data-translate="contact.form.submit">
-                                Send message
+                                Request free quote
                             </button>
                         </form>
                     </div>
