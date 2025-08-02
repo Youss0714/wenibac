@@ -46,6 +46,7 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **August 2, 2025**: Fixed all missing translation keys for footer sections and chatbot in both French and English languages
 - **August 2, 2025**: Reduced chatbot size for more compact display (320px width, 450px max height) with smaller fonts (13px messages, 13px buttons) to ensure all text is visible and less screen intrusion
 - **August 2, 2025**: Comprehensive SEO optimization including enhanced meta tags, structured data (Schema.org), sitemap.xml, robots.txt, geo-tagging, Open Graph tags, Twitter Cards, hreflang attributes, and semantic HTML improvements for better search engine visibility
+- **August 2, 2025**: Updated all domain references from replit.app to wenibac.com for production deployment including canonical URLs, Open Graph tags, sitemap, and structured data
 
 ## User Preferences
 
