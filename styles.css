@@ -2104,14 +2104,14 @@ body {
 
 .message-content p {
     margin: 0;
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
     color: var(--text-dark);
     font-weight: 500;
 }
 
 .message-content p:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .chatbot-actions {
@@ -2128,14 +2128,14 @@ body {
 .chatbot-action {
     background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
     border: 1px solid rgba(226, 232, 240, 0.8);
-    padding: 14px 18px;
-    border-radius: 30px;
+    padding: 12px 16px;
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 15px;
+    gap: 10px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--text-dark);
     position: relative;
@@ -2166,7 +2166,7 @@ body {
 }
 
 .chatbot-action i {
-    font-size: 18px;
+    font-size: 16px;
     transition: transform 0.3s ease;
 }
 
@@ -2284,7 +2284,18 @@ body {
     }
     
     .chatbot-actions {
-        padding: 14px 16px;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+    
+    .chatbot-action {
+        padding: 10px 14px;
+        font-size: 12px;
+        gap: 8px;
+    }
+    
+    .chatbot-action i {
+        font-size: 14px;
     }
 }
 
