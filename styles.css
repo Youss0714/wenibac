@@ -1897,48 +1897,6 @@ body {
     }
 }
 
-/* Hero Trust Badge */
-.hero-trust-badge {
-    margin: 2rem 0 1.5rem 0;
-    padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    animation: fadeInUp 0.8s ease-out 0.6s both;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.trust-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.trust-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.trust-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
 /* Statistics Section */
 .stats-section {
     padding: 4rem 0;
@@ -2052,19 +2010,6 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .hero-trust-badge {
-        margin: 1.5rem 0 1rem 0;
-        padding: 0.8rem 1.2rem;
-    }
-    
-    .trust-number {
-        font-size: 2rem;
-    }
-    
-    .trust-text {
-        font-size: 0.9rem;
-    }
-    
     .stats-section {
         padding: 3rem 0;
     }
@@ -2090,18 +2035,6 @@ body {
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .hero-trust-badge {
-        padding: 0.6rem 1rem;
-    }
-    
-    .trust-number {
-        font-size: 1.8rem;
-    }
-    
-    .trust-text {
-        font-size: 0.8rem;
     }
 }
 

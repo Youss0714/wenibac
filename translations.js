@@ -19,7 +19,6 @@ const translations = {
         'hero.quote_btn': 'Demandez une cotation gratuite',
         'hero.learn_more': 'En savoir plus',
         'hero.track_btn': 'Suivre ma cargaison',
-        'hero.clients_served': 'Clients satisfaits à travers l\'Afrique',
         
         // Testimonials
         'testimonials.1.text': '"Service exceptionnel et équipe très professionnelle. Nos marchandises sont toujours livrées à temps."',
@@ -207,7 +206,6 @@ const translations = {
         'hero.quote_btn': 'Request a free quote',
         'hero.learn_more': 'Learn more',
         'hero.track_btn': 'Track my cargo',
-        'hero.clients_served': 'Satisfied clients across Africa',
         
         // Testimonials
         'testimonials.1.text': '"Exceptional service and very professional team. Our goods are always delivered on time."',
