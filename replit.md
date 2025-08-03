@@ -51,6 +51,10 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **August 2, 2025**: Removed hero trust badge per user request while keeping the main statistics section
 - **August 3, 2025**: Successfully completed migration from Replit Agent to standard Replit environment with Node.js Express server running on port 5000
 - **August 3, 2025**: Updated client statistics from 1,200+ to 5,500+ satisfied clients across Africa per user request
+- **August 3, 2025**: Added live visitor counter in navigation bar with realistic fluctuations (150-400 visitors) and animated pulsing green dot to attract user attention and create engagement
+- **August 3, 2025**: Implemented dynamic visitor count updates every 8-15 seconds with realistic patterns including occasional traffic spikes and reductions
+- **August 3, 2025**: Added bilingual support for visitor counter with French "en ligne" and English "online" translations
+- **August 3, 2025**: Created mobile-responsive styling for visitor counter with smaller fonts and compact design for screens under 480px
 
 ## User Preferences
 

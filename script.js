@@ -60,6 +60,7 @@ function initializeApp() {
     setupAnimations();
     setupCargoCarousel();
     setupStatsAnimation();
+    setupVisitorCounter();
 
     setupChatbot();
     
@@ -111,6 +112,62 @@ function animateCounter(element) {
         }
         element.textContent = displayValue;
     }, 16);
+}
+
+// Live Visitor Counter
+function setupVisitorCounter() {
+    const visitorCountElement = document.getElementById('visitorCount');
+    if (!visitorCountElement) return;
+
+    // Base visitor count (between 200-350 for realism)
+    let baseCount = Math.floor(Math.random() * 150) + 200;
+    let currentCount = baseCount;
+    
+    // Initialize display
+    visitorCountElement.textContent = currentCount;
+
+    // Update visitor count every 8-15 seconds with realistic fluctuations
+    setInterval(() => {
+        // Random change between -3 to +5 visitors
+        const change = Math.floor(Math.random() * 9) - 3;
+        currentCount = Math.max(150, Math.min(400, currentCount + change));
+        
+        // Animate the number change
+        animateVisitorCount(visitorCountElement, currentCount);
+    }, Math.random() * 7000 + 8000); // Random interval between 8-15 seconds
+
+    // Occasional bigger fluctuations (simulate page visits)
+    setInterval(() => {
+        const bigChange = Math.floor(Math.random() * 15) + 5; // +5 to +20 visitors
+        currentCount = Math.min(400, currentCount + bigChange);
+        animateVisitorCount(visitorCountElement, currentCount);
+        
+        // After 30-60 seconds, reduce by smaller amount (people leaving)
+        setTimeout(() => {
+            const reduction = Math.floor(Math.random() * 10) + 3; // -3 to -12 visitors
+            currentCount = Math.max(150, currentCount - reduction);
+            animateVisitorCount(visitorCountElement, currentCount);
+        }, Math.random() * 30000 + 30000);
+    }, Math.random() * 120000 + 60000); // Every 1-3 minutes
+}
+
+function animateVisitorCount(element, targetCount) {
+    const currentCount = parseInt(element.textContent);
+    const diff = targetCount - currentCount;
+    const steps = Math.abs(diff);
+    const stepSize = diff / steps;
+    let step = 0;
+
+    const interval = setInterval(() => {
+        step++;
+        const newCount = Math.round(currentCount + (stepSize * step));
+        element.textContent = newCount;
+        
+        if (step >= steps) {
+            clearInterval(interval);
+            element.textContent = targetCount;
+        }
+    }, 50);
 }
 
 // Navigation functionality

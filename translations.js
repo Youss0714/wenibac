@@ -12,6 +12,7 @@ const translations = {
         'nav.about': 'À propos',
         'nav.gallery': 'Galerie',
         'nav.contact': 'Contact',
+        'nav.visitors': 'en ligne',
         
         // Hero section
         'hero.title': 'Vos marchandises, notre priorité',
@@ -199,6 +200,7 @@ const translations = {
         'nav.about': 'About',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
+        'nav.visitors': 'online',
         
         // Hero section
         'hero.title': 'Your cargo, our priority',
