@@ -49,6 +49,8 @@ This is a bilingual (French/English) responsive website for Wenibac Advanced Shi
 - **August 2, 2025**: Updated all domain references from replit.app to wenibac.com for production deployment including canonical URLs, Open Graph tags, sitemap, and structured data
 - **August 2, 2025**: Added prominent statistics section highlighting "1,200+ clients satisfied across Africa" with animated counters displaying company achievements including 30+ years experience, 15+ African countries served, and 10,000+ containers processed
 - **August 2, 2025**: Removed hero trust badge per user request while keeping the main statistics section
+- **August 3, 2025**: Successfully completed migration from Replit Agent to standard Replit environment with Node.js Express server running on port 5000
+- **August 3, 2025**: Updated client statistics from 1,200+ to 5,500+ satisfied clients across Africa per user request
 
 ## User Preferences
 
