@@ -59,6 +59,7 @@ function initializeApp() {
     setupGoogleMaps();
     setupAnimations();
     setupCargoCarousel();
+    setupStatsAnimation();
 
     setupChatbot();
     
@@ -66,6 +67,50 @@ function initializeApp() {
     setLanguage(currentLanguage);
     
     console.log('Wenibac Advanced Shipping website initialized successfully');
+}
+
+// Statistics Animation
+function setupStatsAnimation() {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(animateCounter);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+}
+
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-count'));
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60 FPS
+    let current = 0;
+    
+    element.classList.add('animate');
+    
+    const counter = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(counter);
+        }
+        
+        // Format the number with commas and add "+" if applicable
+        let displayValue = Math.floor(current).toLocaleString();
+        if (element.textContent.includes('+')) {
+            displayValue += '+';
+        }
+        element.textContent = displayValue;
+    }, 16);
 }
 
 // Navigation functionality

@@ -19,6 +19,7 @@ const translations = {
         'hero.quote_btn': 'Demandez une cotation gratuite',
         'hero.learn_more': 'En savoir plus',
         'hero.track_btn': 'Suivre ma cargaison',
+        'hero.clients_served': 'Clients satisfaits à travers l\'Afrique',
         
         // Testimonials
         'testimonials.1.text': '"Service exceptionnel et équipe très professionnelle. Nos marchandises sont toujours livrées à temps."',
@@ -55,6 +56,12 @@ const translations = {
         
         'services.storage.title': 'Stockage & Entreposage',
         'services.storage.description': 'Solutions de stockage sécurisées avec gestion d\'inventaire et services de distribution.',
+        
+        // Statistics section
+        'stats.clients': 'Clients satisfaits',
+        'stats.experience': 'Années d\'expérience',
+        'stats.countries': 'Pays en Afrique',
+        'stats.containers': 'Conteneurs traités',
         
         // Cargo Tracking section
         'tracking.title': 'Suivi de Cargaison',
@@ -200,6 +207,7 @@ const translations = {
         'hero.quote_btn': 'Request a free quote',
         'hero.learn_more': 'Learn more',
         'hero.track_btn': 'Track my cargo',
+        'hero.clients_served': 'Satisfied clients across Africa',
         
         // Testimonials
         'testimonials.1.text': '"Exceptional service and very professional team. Our goods are always delivered on time."',
@@ -236,6 +244,12 @@ const translations = {
         
         'services.storage.title': 'Storage & Warehousing',
         'services.storage.description': 'Secure storage solutions with inventory management and distribution services.',
+        
+        // Statistics section
+        'stats.clients': 'Satisfied clients',
+        'stats.experience': 'Years of experience',
+        'stats.countries': 'Countries in Africa',
+        'stats.containers': 'Containers processed',
         
         // Cargo Tracking section
         'tracking.title': 'Cargo Tracking',
