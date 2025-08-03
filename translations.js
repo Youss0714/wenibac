@@ -40,22 +40,22 @@ const translations = {
         'services.learn_more': 'En savoir plus',
         
         'services.customs.title': 'Douane & Transit',
-        'services.customs.description': 'Gestion complète des procédures douanières et de transit pour vos importations et exportations.',
+        'services.customs.description': 'Gestion complète des procédures douanières, dédouanement, transit, et documentation d\'import/export au port de Tema avec expertise en réglementation ECOWAS et tarification douanière.',
         
         'services.transport.title': 'Transport Terrestre & Maritime',
-        'services.transport.description': 'Solutions de transport sécurisées par voie terrestre et maritime avec suivi en temps réel.',
+        'services.transport.description': 'Solutions de transport multimodal terrestre et maritime sécurisées : FCL, LCL, transport routier, fret aérien, transport de marchandises dangereuses avec suivi GPS temps réel.',
         
         'services.import_export.title': 'Import/Export',
-        'services.import_export.description': 'Accompagnement complet dans vos opérations d\'import et d\'export avec les meilleurs partenaires.',
+        'services.import_export.description': 'Accompagnement complet import/export : lettres de crédit, financement commercial, assurance cargo, certificats d\'origine, inspection pré-embarquement, et facilitation commerciale Afrique.',
         
         'services.contracts.title': 'Contrats & Trading',
         'services.contracts.description': 'Négociation et gestion de contrats commerciaux avec expertise juridique et commerciale.',
         
         'services.consulting.title': 'Consultation Logistique',
-        'services.consulting.description': 'Conseils personnalisés pour optimiser votre chaîne logistique et réduire vos coûts.',
+        'services.consulting.description': 'Consultation logistique spécialisée : optimisation supply chain, réduction coûts transport, analyse risques, compliance internationale, digitalisation logistique, et stratégies e-commerce fulfillment.',
         
         'services.storage.title': 'Stockage & Entreposage',
-        'services.storage.description': 'Solutions de stockage sécurisées avec gestion d\'inventaire et services de distribution.',
+        'services.storage.description': 'Entrepôts sécurisés sous douane, zones franches, stockage température contrôlée, gestion d\'inventaire WMS, consolidation de fret, et distribution last-mile Ghana et Afrique de l\'Ouest.',
         
         // Statistics section
         'stats.clients': 'Clients satisfaits',
@@ -228,22 +228,22 @@ const translations = {
         'services.learn_more': 'Learn more',
         
         'services.customs.title': 'Customs & Transit',
-        'services.customs.description': 'Complete management of customs and transit procedures for your imports and exports.',
+        'services.customs.description': 'Comprehensive customs clearance, transit management, import/export documentation at Tema Port with expertise in ECOWAS regulations, duty calculation, tariff classification, and trade facilitation services.',
         
         'services.transport.title': 'Land & Maritime Transport',
-        'services.transport.description': 'Secure transport solutions by land and sea with real-time tracking.',
+        'services.transport.description': 'Multimodal transport solutions: FCL/LCL container shipping, road transport, air freight, dangerous goods handling, project cargo, with GPS real-time tracking and fleet management.',
         
         'services.import_export.title': 'Import/Export',
-        'services.import_export.description': 'Complete support for your import and export operations with the best partners.',
+        'services.import_export.description': 'Full import/export support: letters of credit, trade finance, cargo insurance, certificates of origin, pre-shipment inspection, destination inspection, and Africa trade facilitation.',
         
         'services.contracts.title': 'Contracts & Trading',
         'services.contracts.description': 'Commercial contract negotiation and management with legal and commercial expertise.',
         
         'services.consulting.title': 'Logistics Consulting',
-        'services.consulting.description': 'Personalized advice to optimize your supply chain and reduce your costs.',
+        'services.consulting.description': 'Specialized logistics consulting: supply chain optimization, transport cost reduction, risk analysis, international compliance, digitalization, and e-commerce fulfillment strategies.',
         
         'services.storage.title': 'Storage & Warehousing',
-        'services.storage.description': 'Secure storage solutions with inventory management and distribution services.',
+        'services.storage.description': 'Bonded warehouse storage, free zone facilities, temperature-controlled storage, WMS inventory management, freight consolidation, and last-mile distribution across Ghana and West Africa.',
         
         // Statistics section
         'stats.clients': 'Satisfied clients',
