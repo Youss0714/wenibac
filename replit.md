@@ -3,6 +3,13 @@
 ## Overview
 This project delivers a bilingual (French/English) and responsive website for Wenibac Advanced Shipping Ltd., a transit and logistics company based at the Tema port in Ghana. The site's primary purpose is to professionally present shipping and logistics services, with a strong emphasis on "Transit" operations. Key capabilities include comprehensive service descriptions, an interactive cargo tracking system, a detailed company history, and lead generation through an enhanced contact form. The website aims to establish Wenibac as a leading and officially approved transit agency at Tema Port, expanding its market reach across Africa.
 
+## Recent Changes (August 2025)
+- **August 4, 2025**: Fixed mobile hero section title visibility by adjusting padding to 120px (tablets) and 140px (smartphones)
+- **August 4, 2025**: Enhanced chatbot mobile display with increased container height (400px), improved message area (220px), better text wrapping, and responsive font sizing for optimal readability on smartphones
+- **August 3, 2025**: Comprehensive SEO optimization enhancement with 150+ targeted keywords including logistics terminology, Ghana-specific terms, industry-specific vocabulary (FCL/LCL, ECOWAS, customs clearance, freight forwarding, supply chain, etc.), advanced technology terms (AI logistics, IoT tracking, blockchain), and West Africa regional focus
+- **August 3, 2025**: Enhanced structured data with FAQ schema, service catalog, area served information, and detailed business knowledge for better search engine understanding
+- **August 3, 2025**: Enriched service descriptions in both French and English with comprehensive SEO keywords covering customs clearance, multimodal transport, warehouse management, trade finance, and specialized logistics services
+
 ## User Preferences
 Preferred communication style: Simple, everyday language.
 
