@@ -1518,7 +1518,7 @@ body {
     /* Hero Section Mobile */
     .hero-section {
         min-height: 100vh;
-        padding: var(--spacing-xl) 0 var(--spacing-2xl);
+        padding: 120px 0 var(--spacing-2xl);
     }
     
     .hero-content .container {
@@ -1745,6 +1745,10 @@ body {
     }
     
     /* Hero Mobile Small */
+    .hero-section {
+        padding: 140px 0 var(--spacing-2xl);
+    }
+    
     .hero-content .container {
         padding: var(--spacing-md);
     }
