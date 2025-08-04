@@ -1073,6 +1073,53 @@ function scrollToSection(sectionId) {
 }
 
 // Welcome Chatbot Functionality
+function playNotificationSound() {
+    try {
+        // Create audio context
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Create a pleasant notification sound (two-tone chime)
+        const oscillator1 = audioContext.createOscillator();
+        const oscillator2 = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        // Connect nodes
+        oscillator1.connect(gainNode);
+        oscillator2.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        // Configure first tone (higher pitch)
+        oscillator1.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator1.frequency.setValueAtTime(600, audioContext.currentTime + 0.1);
+        
+        // Configure second tone (lower harmony)
+        oscillator2.frequency.setValueAtTime(400, audioContext.currentTime);
+        oscillator2.frequency.setValueAtTime(300, audioContext.currentTime + 0.1);
+        
+        // Configure gain (volume envelope)
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.05);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        
+        // Start and stop oscillators
+        oscillator1.start(audioContext.currentTime);
+        oscillator2.start(audioContext.currentTime);
+        oscillator1.stop(audioContext.currentTime + 0.3);
+        oscillator2.stop(audioContext.currentTime + 0.3);
+        
+    } catch (error) {
+        // Fallback: try to play a simple beep
+        console.log('Web Audio API not supported, using fallback');
+        try {
+            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCSuA1vrOcScFK4PEd8J9IQwxrNr71X5DCDSy2/bEbywE');
+            audio.volume = 0.3;
+            audio.play().catch(() => {});
+        } catch (fallbackError) {
+            console.log('Audio playback not available');
+        }
+    }
+}
+
 function initChatbot() {
     const chatbotContainer = document.getElementById('welcomeChatbot');
     const chatbotTrigger = document.getElementById('chatbotTrigger');
@@ -1099,6 +1146,11 @@ function showWelcomeChatbot() {
     if (chatbotContainer && chatbotTrigger) {
         chatbotContainer.classList.add('active');
         chatbotTrigger.classList.add('hidden');
+        
+        // Play notification sound when chatbot appears
+        setTimeout(() => {
+            playNotificationSound();
+        }, 300); // Small delay to sync with animation
     }
 }
 
@@ -1109,6 +1161,11 @@ function openChatbot() {
     if (chatbotContainer && chatbotTrigger) {
         chatbotContainer.classList.add('active');
         chatbotTrigger.classList.add('hidden');
+        
+        // Play notification sound when manually opened
+        setTimeout(() => {
+            playNotificationSound();
+        }, 300);
     }
 }
 
