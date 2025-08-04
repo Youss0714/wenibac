@@ -1073,50 +1073,111 @@ function scrollToSection(sectionId) {
 }
 
 // Welcome Chatbot Functionality
-function playNotificationSound() {
-    try {
-        // Create audio context
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        
-        // Create a pleasant notification sound (two-tone chime)
-        const oscillator1 = audioContext.createOscillator();
-        const oscillator2 = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        // Connect nodes
-        oscillator1.connect(gainNode);
-        oscillator2.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        // Configure first tone (higher pitch)
-        oscillator1.frequency.setValueAtTime(800, audioContext.currentTime);
-        oscillator1.frequency.setValueAtTime(600, audioContext.currentTime + 0.1);
-        
-        // Configure second tone (lower harmony)
-        oscillator2.frequency.setValueAtTime(400, audioContext.currentTime);
-        oscillator2.frequency.setValueAtTime(300, audioContext.currentTime + 0.1);
-        
-        // Configure gain (volume envelope)
-        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.05);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-        
-        // Start and stop oscillators
-        oscillator1.start(audioContext.currentTime);
-        oscillator2.start(audioContext.currentTime);
-        oscillator1.stop(audioContext.currentTime + 0.3);
-        oscillator2.stop(audioContext.currentTime + 0.3);
-        
-    } catch (error) {
-        // Fallback: try to play a simple beep
-        console.log('Web Audio API not supported, using fallback');
+let audioContext = null;
+let userHasInteracted = false;
+
+// Track user interaction to enable audio
+document.addEventListener('click', function() {
+    userHasInteracted = true;
+    initializeAudioContext();
+}, { once: true });
+
+document.addEventListener('touchstart', function() {
+    userHasInteracted = true;
+    initializeAudioContext();
+}, { once: true });
+
+function initializeAudioContext() {
+    if (!audioContext) {
         try {
-            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCSuA1vrOcScFK4PEd8J9IQwxrNr71X5DCDSy2/bEbywE');
-            audio.volume = 0.3;
-            audio.play().catch(() => {});
-        } catch (fallbackError) {
-            console.log('Audio playback not available');
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+        } catch (error) {
+            console.log('AudioContext not supported');
         }
+    }
+}
+
+function playNotificationSound() {
+    console.log('Attempting to play notification sound...');
+    
+    // Method 1: Web Audio API (preferred)
+    if (audioContext && userHasInteracted) {
+        try {
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+            
+            // Create a pleasant notification sound (two-tone chime)
+            const oscillator1 = audioContext.createOscillator();
+            const oscillator2 = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            // Connect nodes
+            oscillator1.connect(gainNode);
+            oscillator2.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            // Configure first tone (higher pitch)
+            oscillator1.frequency.setValueAtTime(800, audioContext.currentTime);
+            oscillator1.frequency.setValueAtTime(600, audioContext.currentTime + 0.15);
+            
+            // Configure second tone (lower harmony)
+            oscillator2.frequency.setValueAtTime(400, audioContext.currentTime);
+            oscillator2.frequency.setValueAtTime(300, audioContext.currentTime + 0.15);
+            
+            // Configure gain (volume envelope)
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.4);
+            
+            // Start and stop oscillators
+            oscillator1.start(audioContext.currentTime);
+            oscillator2.start(audioContext.currentTime);
+            oscillator1.stop(audioContext.currentTime + 0.4);
+            oscillator2.stop(audioContext.currentTime + 0.4);
+            
+            console.log('Notification sound played successfully');
+            return;
+            
+        } catch (error) {
+            console.log('Web Audio API failed:', error);
+        }
+    }
+    
+    // Method 2: HTML5 Audio fallback
+    try {
+        // Create a simple tone using data URL
+        const audioData = 'data:audio/wav;base64,UklGRh4BAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YfoAAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCSuA1vrOcScFK4PE8sGIOwkVa7zx7KJQDQtOqOPyumAcBDuP3PCwfysEJ3nF8diPPgoTYLXp8OdWFgpJnt/yunAiByyB1vrNeSgFK4DE';
+        const audio = new Audio(audioData);
+        audio.volume = 0.5;
+        
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                console.log('Fallback audio played successfully');
+            }).catch((error) => {
+                console.log('Fallback audio failed:', error);
+                // Method 3: Visual notification as last resort
+                showVisualNotification();
+            });
+        }
+    } catch (error) {
+        console.log('Audio fallback failed:', error);
+        showVisualNotification();
+    }
+}
+
+function showVisualNotification() {
+    // Add a visual pulse effect to the chatbot as audio substitute
+    const chatbot = document.getElementById('welcomeChatbot');
+    if (chatbot) {
+        chatbot.style.animation = 'chatbotPulse 0.6s ease-in-out';
+        setTimeout(() => {
+            chatbot.style.animation = '';
+        }, 600);
     }
 }
 
@@ -1150,7 +1211,7 @@ function showWelcomeChatbot() {
         // Play notification sound when chatbot appears
         setTimeout(() => {
             playNotificationSound();
-        }, 300); // Small delay to sync with animation
+        }, 500); // Delay to sync with animation
     }
 }
 
@@ -1161,6 +1222,10 @@ function openChatbot() {
     if (chatbotContainer && chatbotTrigger) {
         chatbotContainer.classList.add('active');
         chatbotTrigger.classList.add('hidden');
+        
+        // Initialize audio context on user interaction
+        initializeAudioContext();
+        userHasInteracted = true;
         
         // Play notification sound when manually opened
         setTimeout(() => {

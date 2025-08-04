@@ -2513,6 +2513,21 @@ body {
     }
 }
 
+@keyframes chatbotPulse {
+    0% {
+        transform: translateX(0) scale(1);
+        box-shadow: 0 15px 40px rgba(30, 58, 138, 0.15);
+    }
+    50% {
+        transform: translateX(0) scale(1.05);
+        box-shadow: 0 20px 60px rgba(30, 58, 138, 0.25);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        box-shadow: 0 15px 40px rgba(30, 58, 138, 0.15);
+    }
+}
+
 /* Mobile Responsiveness for Chatbot */
 @media (max-width: 768px) {
     .chatbot-container {
