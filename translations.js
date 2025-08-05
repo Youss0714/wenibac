@@ -180,6 +180,23 @@ const translations = {
         // WhatsApp
         'whatsapp.default_message': 'Bonjour, je souhaiterais obtenir plus d\'informations sur vos services.',
         
+        // Footer
+        'footer.description': 'Votre partenaire de confiance pour tous vos besoins en transit et transport au Ghana et en Afrique de l\'Ouest.',
+        'footer.services.title': 'Services',
+        'footer.services.customs': 'Douane & Transit',
+        'footer.services.transport': 'Transport Maritime',
+        'footer.services.import_export': 'Import/Export',
+        'footer.services.consulting': 'Consultation',
+        'footer.company.title': 'Entreprise',
+        'footer.company.about': 'À propos',
+        'footer.company.gallery': 'Galerie',
+        'footer.company.contact': 'Contact',
+        'footer.company.careers': 'Carrières',
+        'footer.contact.title': 'Contact',
+        'footer.copyright': '© 2025 Wenibac Advanced Shipping Ltd. Tous droits réservés.',
+        'footer.privacy': 'Politique de confidentialité',
+        'footer.terms': 'Conditions d\'utilisation',
+
         // Chatbot
         'chatbot.name': 'Assistant Wenibac',
         'chatbot.status': 'En ligne',
