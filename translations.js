@@ -15,7 +15,7 @@ const translations = {
 
         
         // Hero section
-        'hero.title': 'Vos marchandises, notre priorité',
+        'hero.title': '<span class="word" data-word="Vos">Vos</span> <span class="word" data-word="marchandises,">marchandises,</span> <span class="word" data-word="notre">notre</span> <span class="word highlight-word" data-word="priorité">priorité</span>',
         'hero.subtitle': 'Solutions de transit et de transport professionnelles au port de Tema, Ghana',
         'hero.quote_btn': 'Demandez une cotation gratuite',
         'hero.learn_more': 'En savoir plus',
@@ -206,7 +206,7 @@ const translations = {
 
         
         // Hero section
-        'hero.title': 'Your cargo, our priority',
+        'hero.title': '<span class="word" data-word="Your">Your</span> <span class="word" data-word="cargo,">cargo,</span> <span class="word" data-word="our">our</span> <span class="word highlight-word" data-word="priority">priority</span>',
         'hero.subtitle': 'Professional transit and transport solutions at Tema port, Ghana',
         'hero.quote_btn': 'Request a free quote',
         'hero.learn_more': 'Learn more',

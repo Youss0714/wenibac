@@ -61,6 +61,7 @@ function initializeApp() {
     setupCargoCarousel();
     setupStatsAnimation();
     setupVisitorCounter();
+    setupHeroTitleAnimation();
 
     setupChatbot();
     
@@ -112,6 +113,40 @@ function animateCounter(element) {
         }
         element.textContent = displayValue;
     }, 16);
+}
+
+// Hero Title Animation
+function setupHeroTitleAnimation() {
+    const animatedTitle = document.querySelector('.animated-title');
+    if (!animatedTitle) return;
+
+    // Reset animation on language change
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList') {
+                restartTitleAnimation();
+            }
+        });
+    });
+
+    observer.observe(animatedTitle, { childList: true, subtree: true });
+
+    function restartTitleAnimation() {
+        const words = animatedTitle.querySelectorAll('.word');
+        words.forEach((word, index) => {
+            word.style.animation = 'none';
+            word.offsetHeight; // Trigger reflow
+            word.style.animation = `wordReveal 0.8s ease-out ${0.2 + (index * 0.2)}s forwards`;
+        });
+    }
+
+    // Initial animation trigger after page load
+    setTimeout(() => {
+        const words = animatedTitle.querySelectorAll('.word');
+        words.forEach((word, index) => {
+            word.style.animationDelay = `${0.2 + (index * 0.2)}s`;
+        });
+    }, 100);
 }
 
 // Live Visitor Counter
@@ -263,7 +298,21 @@ function setLanguage(lang) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translation;
             } else {
-                element.textContent = translation;
+                // Special handling for animated title
+                if (element.classList.contains('animated-title')) {
+                    element.innerHTML = translation;
+                    // Restart animation after content change
+                    setTimeout(() => {
+                        const words = element.querySelectorAll('.word');
+                        words.forEach((word, index) => {
+                            word.style.animation = 'none';
+                            word.offsetHeight; // Trigger reflow
+                            word.style.animation = `wordReveal 0.8s ease-out ${0.2 + (index * 0.2)}s forwards`;
+                        });
+                    }, 50);
+                } else {
+                    element.textContent = translation;
+                }
             }
             console.log(`✓ Translated ${key}: ${translation.substring(0, 50)}${translation.length > 50 ? '...' : ''}`);
         } else {
