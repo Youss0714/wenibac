@@ -152,14 +152,15 @@ function setupHeroTitleAnimation() {
             
             // Preserve original colors
             if (word.classList.contains('highlight-word')) {
-                word.style.background = 'linear-gradient(45deg, var(--secondary-color), var(--accent-yellow))';
-                word.style.webkitBackgroundClip = 'text';
-                word.style.backgroundClip = 'text';
-                word.style.webkitTextFillColor = 'transparent';
+                word.style.color = 'var(--accent-yellow)';
+                word.style.fontWeight = '800';
+                word.style.textShadow = '0 0 20px rgba(251, 191, 36, 0.8), 0 2px 4px rgba(0, 0, 0, 0.3)';
             } else if (index === 1) { // "cargo," word
                 word.style.color = 'var(--secondary-color)';
+                word.style.textShadow = '0 0 20px rgba(59, 130, 246, 0.6)';
             } else {
                 word.style.color = 'var(--white)';
+                word.style.textShadow = '0 2px 4px rgba(0, 0, 0, 0.3)';
             }
         });
     }, 100);
@@ -325,6 +326,16 @@ function setLanguage(lang) {
                             word.style.animation = 'none';
                             word.offsetHeight; // Trigger reflow
                             word.style.animation = `wordReveal 0.8s ease-out ${0.5 + (index * 0.3)}s forwards`;
+                            
+                            // Restore colors after animation restart
+                            if (word.classList.contains('highlight-word')) {
+                                word.style.color = 'var(--accent-yellow)';
+                                word.style.fontWeight = '800';
+                            } else if (index === 1) {
+                                word.style.color = 'var(--secondary-color)';
+                            } else {
+                                word.style.color = 'var(--white)';
+                            }
                         });
                     }, 50);
                 } else {
