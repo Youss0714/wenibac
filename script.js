@@ -1,5 +1,5 @@
 // Global variables
-let currentLanguage = localStorage.getItem('selectedLanguage') || 'fr';
+let currentLanguage = 'en';
 let currentTestimonial = 0;
 let testimonialInterval;
 
@@ -228,7 +228,6 @@ function setupLanguageSwitcher() {
     
     langToggle.addEventListener('click', function() {
         currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
-        localStorage.setItem('selectedLanguage', currentLanguage);
         setLanguage(currentLanguage);
     });
 }

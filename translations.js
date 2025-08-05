@@ -386,8 +386,12 @@ function getTranslation(key, language = 'fr') {
         if (translation && typeof translation === 'object' && k in translation) {
             translation = translation[k];
         } else {
+            // Fallback to French if translation not found
+            if (language !== 'fr') {
+                return getTranslation(key, 'fr');
+            }
             console.warn(`Translation not found for key: ${key} in language: ${language}`);
-            return key; // Return the key as fallback
+            return null;
         }
     }
     
