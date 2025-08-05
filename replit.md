@@ -4,6 +4,7 @@
 This project delivers a bilingual (French/English) and responsive website for Wenibac Advanced Shipping Ltd., a transit and logistics company based at the Tema port in Ghana. The site's primary purpose is to professionally present shipping and logistics services, with a strong emphasis on "Transit" operations. Key capabilities include comprehensive service descriptions, an interactive cargo tracking system, a detailed company history, and lead generation through an enhanced contact form. The website aims to establish Wenibac as a leading and officially approved transit agency at Tema Port, expanding its market reach across Africa.
 
 ## Recent Changes (August 2025)
+- **August 5, 2025**: Added professional founder photo section to "Our History" with Mr. Yacubu Dawuda's image, implemented responsive design with circular photo layout, and fixed mobile text display issues to ensure full name visibility on all devices
 - **August 5, 2025**: Successfully migrated project from Replit Agent to standard Replit environment - installed Node.js dependencies (express, cors, @sendgrid/mail, xlsx), fixed translation system fallback logic for proper bilingual functionality, and verified server deployment on port 5000
 - **August 4, 2025**: Fixed mobile hero section title visibility by adjusting padding to 120px (tablets) and 140px (smartphones)
 - **August 4, 2025**: Enhanced chatbot mobile display with increased container height (400px), improved message area (220px), better text wrapping, and responsive font sizing for optimal readability on smartphones
@@ -32,6 +33,7 @@ A robust design system is implemented using CSS Custom Properties for consistent
 - **Cargo Tracking System**: A dedicated `suivi.html` page offers a comprehensive directory of major shipping carriers (Maersk, CMA CGM, MSC, Hapag-Lloyd, COSCO, ONE) with official logos, real tracking URLs, search functionality, and interactive elements, all fully bilingual and responsive.
 - **Chatbot**: An interactive, bilingual welcome chatbot with navigation shortcuts and WhatsApp integration, featuring modern design enhancements and professional maritime-themed aesthetics.
 - **Contact Form**: Enhanced to include professional shipping quote fields (departure/arrival countries, incoterms, shipping dates, cargo descriptions).
+- **Founder Section**: Professional presentation of company founder Mr. Yacubu Dawuda in the "Our History" section with circular photo, bilingual captions, and fully responsive mobile design ensuring proper text display across all devices.
 - **SEO Optimization**: Comprehensive on-page SEO including enhanced meta tags, structured data (Schema.org, FAQ schema, service catalog), sitemap.xml, robots.txt, geo-tagging, Open Graph tags, Twitter Cards, hreflang attributes, and semantic HTML for improved search visibility and targeting over 150 keywords related to logistics and Ghana.
 - **Statistics Section**: Prominently displays company achievements with animated counters, highlighting client satisfaction, years of experience, countries served, and containers processed.
 
