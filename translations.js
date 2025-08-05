@@ -12,7 +12,7 @@ const translations = {
         'nav.about': 'À propos',
         'nav.gallery': 'Galerie',
         'nav.contact': 'Contact',
-        'nav.visitors': 'en ligne',
+
         
         // Hero section
         'hero.title': 'Vos marchandises, notre priorité',
@@ -182,6 +182,7 @@ const translations = {
         
         // Chatbot
         'chatbot.name': 'Assistant Wenibac',
+        'chatbot.status': 'En ligne',
         'chatbot.welcome': 'Bienvenue chez Wenibac Advanced Shipping Ltd ! 👋',
         'chatbot.intro': 'Je suis là pour vous aider avec vos besoins en transit et transport maritime. Comment puis-je vous assister aujourd\'hui ?',
         'chatbot.services': 'Nos Services',
@@ -202,7 +203,7 @@ const translations = {
         'nav.about': 'About',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
-        'nav.visitors': 'online',
+
         
         // Hero section
         'hero.title': 'Your cargo, our priority',
@@ -372,6 +373,7 @@ const translations = {
         
         // Chatbot
         'chatbot.name': 'Wenibac Assistant',
+        'chatbot.status': 'Online',
         'chatbot.welcome': 'Welcome to Wenibac Advanced Shipping Ltd! 👋',
         'chatbot.intro': 'I\'m here to help you with your transit and maritime transport needs. How can I assist you today?',
         'chatbot.services': 'Our Services',
