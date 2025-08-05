@@ -464,40 +464,41 @@ body {
 .animated-title .word {
     display: inline-block;
     opacity: 1 !important; /* Show by default, always visible */
-    transform: translateY(0) !important;
+    transform: translateY(0);
     margin-right: 0.3em;
     color: var(--white) !important;
-    /* Disable animation for immediate visibility */
-    animation: none !important;
+    /* Constant subtle animation for all words */
+    animation: wordFloat 3s ease-in-out infinite;
     animation-fill-mode: forwards;
 }
 
 .animated-title .word:nth-child(1) {
-    animation-delay: 0.5s;
+    animation-delay: 0s; /* "Your" */
 }
 
 .animated-title .word:nth-child(2) {
-    animation-delay: 0.8s;
+    animation-delay: 0.5s; /* "cargo," */
     color: var(--secondary-color) !important;
     text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
 }
 
 .animated-title .word:nth-child(3) {
-    animation-delay: 1.1s;
+    animation-delay: 1s; /* "our" */
 }
 
 .animated-title .word:nth-child(4) {
-    animation-delay: 1.4s;
+    animation-delay: 1.5s; /* "priority" */
 }
 
 .animated-title .highlight-word {
     color: var(--white) !important;
     position: relative;
-    animation: none !important; /* Disable animation for immediate visibility */
     font-weight: 800 !important;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.3) !important;
     opacity: 1 !important;
     display: inline-block !important;
+    /* Enhanced constant animation for "priority" */
+    animation: priorityGlow 2s ease-in-out infinite alternate, wordFloat 3s ease-in-out infinite !important;
 }
 
 .animated-title .highlight-word::after {
@@ -530,14 +531,25 @@ body {
     }
 }
 
-@keyframes pulseGlow {
+/* Constant floating animation for all words */
+@keyframes wordFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Enhanced glow animation for "priority" word */
+@keyframes priorityGlow {
     0% {
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.3);
-        color: var(--white);
+        transform: scale(1);
     }
     100% {
-        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 50px rgba(59, 130, 246, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
-        color: var(--white);
+        text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(59, 130, 246, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
+        transform: scale(1.05);
     }
 }
 
