@@ -149,6 +149,18 @@ function setupHeroTitleAnimation() {
             word.style.opacity = '0';
             word.style.transform = 'translateY(20px) rotateX(90deg)';
             word.style.animationDelay = `${0.5 + (index * 0.3)}s`;
+            
+            // Preserve original colors
+            if (word.classList.contains('highlight-word')) {
+                word.style.background = 'linear-gradient(45deg, var(--secondary-color), var(--accent-yellow))';
+                word.style.webkitBackgroundClip = 'text';
+                word.style.backgroundClip = 'text';
+                word.style.webkitTextFillColor = 'transparent';
+            } else if (index === 1) { // "cargo," word
+                word.style.color = 'var(--secondary-color)';
+            } else {
+                word.style.color = 'var(--white)';
+            }
         });
     }, 100);
 }
