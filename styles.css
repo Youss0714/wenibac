@@ -446,8 +446,14 @@ body {
     margin-bottom: var(--spacing-md);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 1s ease-out;
-    /* Fallback for non-animated titles */
-    color: var(--white);
+    /* Ensure all text is always white and visible */
+    color: var(--white) !important;
+    opacity: 1 !important;
+}
+
+.hero-title * {
+    color: var(--white) !important;
+    opacity: 1 !important;
 }
 
 /* Ensure text is visible even without animation */
@@ -457,12 +463,12 @@ body {
 
 .animated-title .word {
     display: inline-block;
-    opacity: 1; /* Show by default, hide with animation */
-    transform: translateY(0);
+    opacity: 1 !important; /* Show by default, always visible */
+    transform: translateY(0) !important;
     margin-right: 0.3em;
-    color: var(--white);
-    /* Animation will override these values */
-    animation: wordReveal 1s ease-out forwards;
+    color: var(--white) !important;
+    /* Disable animation for immediate visibility */
+    animation: none !important;
     animation-fill-mode: forwards;
 }
 
@@ -487,9 +493,11 @@ body {
 .animated-title .highlight-word {
     color: var(--white) !important;
     position: relative;
-    animation: pulseGlow 2s ease-in-out infinite alternate;
-    font-weight: 800;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: none !important; /* Disable animation for immediate visibility */
+    font-weight: 800 !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    opacity: 1 !important;
+    display: inline-block !important;
 }
 
 .animated-title .highlight-word::after {
