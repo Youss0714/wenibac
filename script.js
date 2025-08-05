@@ -134,9 +134,10 @@ function setupHeroTitleAnimation() {
     function restartTitleAnimation() {
         const words = animatedTitle.querySelectorAll('.word');
         words.forEach((word, index) => {
+            word.style.opacity = '0';
             word.style.animation = 'none';
             word.offsetHeight; // Trigger reflow
-            word.style.animation = `wordReveal 0.8s ease-out ${0.2 + (index * 0.2)}s forwards`;
+            word.style.animation = `wordReveal 0.8s ease-out ${0.5 + (index * 0.3)}s forwards`;
         });
     }
 
@@ -144,7 +145,10 @@ function setupHeroTitleAnimation() {
     setTimeout(() => {
         const words = animatedTitle.querySelectorAll('.word');
         words.forEach((word, index) => {
-            word.style.animationDelay = `${0.2 + (index * 0.2)}s`;
+            // Set initial animation state
+            word.style.opacity = '0';
+            word.style.transform = 'translateY(20px) rotateX(90deg)';
+            word.style.animationDelay = `${0.5 + (index * 0.3)}s`;
         });
     }, 100);
 }
@@ -305,9 +309,10 @@ function setLanguage(lang) {
                     setTimeout(() => {
                         const words = element.querySelectorAll('.word');
                         words.forEach((word, index) => {
+                            word.style.opacity = '0';
                             word.style.animation = 'none';
                             word.offsetHeight; // Trigger reflow
-                            word.style.animation = `wordReveal 0.8s ease-out ${0.2 + (index * 0.2)}s forwards`;
+                            word.style.animation = `wordReveal 0.8s ease-out ${0.5 + (index * 0.3)}s forwards`;
                         });
                     }, 50);
                 } else {
