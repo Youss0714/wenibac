@@ -98,6 +98,9 @@ const translations = {
         'about.values.transparency': 'Transparence et intégrité',
         'about.values.innovation': 'Innovation continue',
         
+        'about.founder.name': 'M. Yacubu Dawuda',
+        'about.founder.title': 'Fondateur & PDG',
+        
         'about.location.title': 'Notre Localisation',
         'about.location.directions': 'Obtenir des directions',
         'about.location.view_map': 'Voir sur Google Maps',
@@ -285,6 +288,9 @@ const translations = {
         'about.values.excellence': 'Operational excellence',
         'about.values.transparency': 'Transparency and integrity',
         'about.values.innovation': 'Continuous innovation',
+        
+        'about.founder.name': 'Mr. Yacubu Dawuda',
+        'about.founder.title': 'Founder & CEO',
         
         'about.location.title': 'Our Location',
         'about.location.directions': 'Get directions',
