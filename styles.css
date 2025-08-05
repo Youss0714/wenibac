@@ -1865,6 +1865,10 @@ body {
         gap: var(--spacing-lg);
     }
     
+    .about-text {
+        padding: 0 var(--spacing-xs);
+    }
+    
     .founder-section {
         flex-direction: column;
         align-items: center;
@@ -1875,6 +1879,22 @@ body {
     .founder-photo {
         width: 100px;
         height: 100px;
+    }
+    
+    .founder-caption {
+        width: 100%;
+        min-width: 140px;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .founder-caption span {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+        display: inline-block;
+        min-width: 140px;
+        word-break: keep-all;
     }
     
     .about-card {
