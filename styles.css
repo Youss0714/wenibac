@@ -1689,7 +1689,11 @@ body {
     /* Hero Section Mobile */
     .hero-section {
         min-height: 100vh;
-        padding: 120px 0 var(--spacing-2xl);
+        padding: 80px 0 var(--spacing-2xl); /* Réduit de 120px à 80px pour remonter le contenu */
+    }
+    
+    .hero-content {
+        margin-top: -50px; /* Remonter le contenu vers le haut sur mobile */
     }
     
     .hero-content .container {
@@ -1917,7 +1921,11 @@ body {
     
     /* Hero Mobile Small */
     .hero-section {
-        padding: 140px 0 var(--spacing-2xl);
+        padding: 100px 0 var(--spacing-2xl); /* Réduit de 140px à 100px pour remonter le contenu */
+    }
+    
+    .hero-content {
+        margin-top: -60px; /* Remonter encore plus le contenu sur très petit écran */
     }
     
     .hero-content .container {
