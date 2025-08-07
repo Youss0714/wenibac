@@ -2403,12 +2403,13 @@ body {
 /* Statistics Section */
 .stats-section {
     padding: 4rem 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #0f4c75 0%, #1e40af 30%, #2563eb 70%, #3b82f6 100%);
     color: white;
     position: relative;
     overflow: hidden;
 }
 
+/* Ocean Wave Background */
 .stats-section::before {
     content: '';
     position: absolute;
@@ -2416,8 +2417,86 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.2) 0%, transparent 30%),
+        radial-gradient(circle at 40% 80%, rgba(96, 165, 250, 0.2) 0%, transparent 30%);
+    animation: oceanFlow 6s ease-in-out infinite;
+}
+
+.stats-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,60 C150,90 350,30 600,60 C850,100 1050,40 1200,60 L1200,120 L0,120 Z' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E") repeat-x;
+    animation: oceanWave1 4s ease-in-out infinite;
+}
+
+/* Additional Wave Layers */
+.stats-section .ocean-wave-1,
+.stats-section .ocean-wave-2,
+.stats-section .ocean-wave-3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    opacity: 0.15;
+}
+
+.stats-section .ocean-wave-1 {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,40 C200,80 400,20 600,50 C800,90 1000,30 1200,50 L1200,120 L0,120 Z' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E") repeat-x;
+    animation: oceanWave1 5s ease-in-out infinite;
+    height: 70px;
+}
+
+.stats-section .ocean-wave-2 {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,50 C180,20 420,80 600,40 C780,10 980,70 1200,40 L1200,120 L0,120 Z' fill='rgba(59,130,246,0.2)'/%3E%3C/svg%3E") repeat-x;
+    animation: oceanWave2 4.5s ease-in-out infinite reverse;
+    height: 60px;
+}
+
+.stats-section .ocean-wave-3 {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,70 C250,30 450,90 600,50 C750,20 950,80 1200,50 L1200,120 L0,120 Z' fill='rgba(96,165,250,0.15)'/%3E%3C/svg%3E") repeat-x;
+    animation: oceanWave3 6s ease-in-out infinite;
+    height: 50px;
+}
+
+@keyframes oceanFlow {
+    0%, 100% { 
+        transform: translateX(0) scale(1);
+        opacity: 0.6;
+    }
+    25% { 
+        transform: translateX(-10px) scale(1.02);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translateX(5px) scale(0.98);
+        opacity: 0.7;
+    }
+    75% { 
+        transform: translateX(-5px) scale(1.01);
+        opacity: 0.9;
+    }
+}
+
+@keyframes oceanWave1 {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(-80px); }
+}
+
+@keyframes oceanWave2 {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(60px); }
+}
+
+@keyframes oceanWave3 {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(-40px); }
 }
 
 .stats-grid {
