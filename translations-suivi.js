@@ -51,6 +51,31 @@ const trackingTranslations = {
             name: "Ocean Network Express",
             description: "Alliance japonaise moderne alliant tradition et innovation, ONE propose un suivi de haute précision avec interface digitale avancée et service client d'excellence japonaise.",
             tooltip: "Alliance japonaise créée en 2018. Fusion de K Line, MOL et NYK. Excellence du service japonais."
+        },
+        grimaldi_group: {
+            name: "Grimaldi Group",
+            description: "Leader européen du transport ferry et cargo, Grimaldi Group offre des services de suivi efficaces pour les routes méditerranéennes avec une expertise dans le transport de passagers et marchandises.",
+            tooltip: "Leader européen du transport maritime ferry et cargo. Spécialisé dans les routes méditerranéennes."
+        },
+        supermaritime: {
+            name: "Supermaritime",
+            description: "Spécialiste des routes d'Afrique de l'Ouest, Supermaritime offre un service de suivi personnalisé avec une connaissance approfondie des ports africains et des réglementations locales.",
+            tooltip: "Compagnie spécialisée dans les routes d'Afrique de l'Ouest avec une expertise régionale approfondie."
+        },
+        oocl: {
+            name: "OOCL",
+            description: "Orient Overseas Container Line, basée à Hong Kong, offre un suivi avancé avec technologie de pointe et excellence dans le service client sur les routes transpacifiques et asiatiques.",
+            tooltip: "Compagnie de Hong Kong, membre du groupe COSCO. Forte présence sur les routes transpacifiques."
+        },
+        pil: {
+            name: "PIL",
+            description: "Pacific International Lines, leader singapourien, offre un suivi précis avec une expertise unique des routes intra-asiatiques et des services personnalisés pour le marché asiatique.",
+            tooltip: "Compagnie singapourienne leader en Asie-Pacifique. Expertise dans les routes intra-asiatiques."
+        },
+        arkas_line: {
+            name: "Arkas Line",
+            description: "Compagnie turque de référence, Arkas Line propose un suivi efficace avec une spécialisation en Méditerranée orientale et une expertise approfondie des routes régionales.",
+            tooltip: "Compagnie turque leader en Méditerranée orientale avec une expertise dans les routes régionales."
         }
     },
     
@@ -105,6 +130,31 @@ const trackingTranslations = {
             name: "Ocean Network Express",
             description: "Modern Japanese alliance combining tradition and innovation, ONE offers high-precision tracking with advanced digital interface and Japanese service excellence.",
             tooltip: "Japanese alliance created in 2018. Merger of K Line, MOL and NYK. Japanese service excellence."
+        },
+        grimaldi_group: {
+            name: "Grimaldi Group",
+            description: "European leader in ferry and cargo transport, Grimaldi Group offers efficient tracking services for Mediterranean routes with expertise in passenger and freight transport.",
+            tooltip: "European leader in maritime ferry and cargo transport. Specialized in Mediterranean routes."
+        },
+        supermaritime: {
+            name: "Supermaritime",
+            description: "West Africa routes specialist, Supermaritime offers personalized tracking service with deep knowledge of African ports and local regulations.",
+            tooltip: "Company specialized in West Africa routes with deep regional expertise."
+        },
+        oocl: {
+            name: "OOCL",
+            description: "Orient Overseas Container Line, based in Hong Kong, offers advanced tracking with cutting-edge technology and service excellence on transpacific and Asian routes.",
+            tooltip: "Hong Kong company, member of COSCO group. Strong presence on transpacific routes."
+        },
+        pil: {
+            name: "PIL",
+            description: "Pacific International Lines, Singaporean leader, offers precise tracking with unique expertise in intra-Asian routes and personalized services for the Asian market.",
+            tooltip: "Singaporean leader in Asia-Pacific. Expertise in intra-Asian routes."
+        },
+        arkas_line: {
+            name: "Arkas Line",
+            description: "Reference Turkish company, Arkas Line offers efficient tracking with specialization in Eastern Mediterranean and deep expertise in regional routes.",
+            tooltip: "Turkish leader in Eastern Mediterranean with expertise in regional routes."
         }
     }
 };
@@ -149,7 +199,7 @@ function updateTrackingPageContent() {
 }
 
 function updateCarrierCards(translations) {
-    const carriers = ['maersk', 'cma_cgm', 'msc', 'hapag_lloyd', 'cosco', 'one'];
+    const carriers = ['maersk', 'cma_cgm', 'msc', 'hapag_lloyd', 'cosco', 'one', 'grimaldi_group', 'supermaritime', 'oocl', 'pil', 'arkas_line'];
     
     carriers.forEach(carrier => {
         const card = document.querySelector(`[data-name*="${carrier}"]`);
