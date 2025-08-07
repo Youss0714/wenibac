@@ -798,7 +798,7 @@ function setupGoogleMaps() {
                         Tema Port, Ghana
                     </p>
                     <div style="margin: 8px 0; color: #374151; font-size: 13px;">
-                        <p style="margin: 2px 0;"><i class="fas fa-phone" style="color: #3b82f6; width: 16px;"></i> +233303214304</p>
+                        <p style="margin: 2px 0;"><i class="fas fa-phone" style="color: #3b82f6; width: 16px;"></i> +233265193893</p>
                         <p style="margin: 2px 0;"><i class="fas fa-envelope" style="color: #3b82f6; width: 16px;"></i> wenibac67@gmail.com</p>
                     </div>
                     <a href="https://www.google.com/maps/dir/?api=1&destination=5.6152,0.0167" 
@@ -989,7 +989,7 @@ function setupHeroButtons() {
 
 // WhatsApp integration
 function openWhatsApp(message = '') {
-    const phone = '233303214304'; // Updated with correct WhatsApp number
+    const phone = '233265193893'; // Updated with correct WhatsApp number
     const defaultMessage = getTranslation('whatsapp.default_message', currentLanguage) || 
         'Bonjour, je souhaiterais obtenir plus d\'informations sur vos services.';
     
