@@ -156,7 +156,7 @@ app.post('/api/contact', async (req, res) => {
 
         // Send email with Excel attachment
         const msg = {
-            to: 'wenibac67@gmail.com',
+            to: ['wenibac67@gmail.com', 'oudrao@yahoo.com'],
             from: {
                 email: 'noreply@wenibac.com',
                 name: 'Wenibac Advanced Shipping'
