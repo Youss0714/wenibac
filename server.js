@@ -88,12 +88,13 @@ app.post('/api/contact', async (req, res) => {
 
         // For now, just log the data and create Excel file locally
         if (!process.env.SENDGRID_API_KEY) {
-            console.log('SendGrid not configured. Saving form data locally.');
+            console.log('⚠️  SendGrid not configured. Saving form data locally.');
+            console.log('📧 When configured, emails would be sent to: wenibac67@gmail.com, oudrao@yahoo.com');
             
             // Create Excel file for download/manual handling
             const { filename, filepath } = createExcelFile(formData);
             
-            console.log(`Form data saved to Excel file: ${filename}`);
+            console.log(`📄 Form data saved to Excel file: ${filename}`);
             
             return res.json({
                 success: true,
@@ -154,9 +155,13 @@ app.post('/api/contact', async (req, res) => {
             </div>
         `;
 
+        // Configure recipient emails
+        const recipientEmails = ['wenibac67@gmail.com', 'oudrao@yahoo.com'];
+        console.log('📧 Email will be sent to:', recipientEmails.join(', '));
+
         // Send email with Excel attachment
         const msg = {
-            to: ['wenibac67@gmail.com', 'oudrao@yahoo.com'],
+            to: recipientEmails,
             from: {
                 email: 'noreply@wenibac.com',
                 name: 'Wenibac Advanced Shipping'
