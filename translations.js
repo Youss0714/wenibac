@@ -10,6 +10,7 @@ const translations = {
         'nav.services': 'Services',
         'nav.tracking': 'Suivi Cargaison',
         'nav.about': 'À propos',
+        'nav.faq': 'FAQ',
         'nav.gallery': 'Galerie',
         'nav.contact': 'Contact',
 
@@ -105,6 +106,28 @@ const translations = {
         'about.location.directions': 'Obtenir des directions',
         'about.location.view_map': 'Voir sur Google Maps',
         
+        // FAQ section
+        'faq.title': 'Questions Fréquentes',
+        'faq.subtitle': 'Trouvez les réponses à vos questions les plus courantes',
+        
+        'faq.q1.question': 'Quels services de transit et logistique offre Wenibac au port de Tema ?',
+        'faq.q1.answer': 'Wenibac propose des services complets de dédouanement, transit, transport multimodal, entreposage sous douane, et facilitation commerciale avec plus de 30 ans d\'expérience au port de Tema.',
+        
+        'faq.q2.question': 'Quels sont vos tarifs pour les services de transit ?',
+        'faq.q2.answer': 'Nos tarifs varient selon le type de service, la destination, le volume et la nature de la marchandise. Contactez-nous pour un devis personnalisé gratuit adapté à vos besoins spécifiques.',
+        
+        'faq.q3.question': 'Quels délais pour les procédures douanières ?',
+        'faq.q3.answer': 'Les délais dépendent de la complexité du dossier et de la nature des marchandises. En moyenne : 24-48h pour les déclarations standard, 3-5 jours pour les dossiers complexes avec inspection.',
+        
+        'faq.q4.question': 'Dans quels pays d\'Afrique livrez-vous ?',
+        'faq.q4.answer': 'Nous desservons 15+ pays africains incluant tous les pays CEDEAO : Niger, Burkina Faso, Mali, Côte d\'Ivoire, Nigeria, Togo, Bénin, Sénégal, et autres destinations sur demande.',
+        
+        'faq.q5.question': 'Comment suivre ma cargaison en temps réel ?',
+        'faq.q5.answer': 'Utilisez notre système de suivi en ligne avec votre numéro de référence, ou contactez notre équipe aux +233244801443 / +233518813480 pour des mises à jour en temps réel.',
+        
+        'faq.q6.question': 'Quels documents sont requis pour l\'import/export ?',
+        'faq.q6.answer': 'Documents requis : facture commerciale, liste de colisage, connaissement, certificat d\'origine, licence d\'importation (si applicable), et autres selon la nature des marchandises.',
+
         // Gallery section
         'gallery.title': 'Galerie',
         'gallery.subtitle': 'Découvrez nos installations et nos opérations',
@@ -218,6 +241,7 @@ const translations = {
         'nav.services': 'Services',
         'nav.tracking': 'Cargo Tracking',
         'nav.about': 'About',
+        'nav.faq': 'FAQ',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
 
@@ -313,6 +337,28 @@ const translations = {
         'about.location.directions': 'Get directions',
         'about.location.view_map': 'View on Google Maps',
         
+        // FAQ section
+        'faq.title': 'Frequently Asked Questions',
+        'faq.subtitle': 'Find answers to your most common questions',
+        
+        'faq.q1.question': 'What transit and logistics services does Wenibac offer at Tema port?',
+        'faq.q1.answer': 'Wenibac provides comprehensive customs clearance, transit, multimodal transport, bonded warehousing, and trade facilitation services with over 30 years of experience at Tema Port.',
+        
+        'faq.q2.question': 'What are your rates for transit services?',
+        'faq.q2.answer': 'Our rates vary depending on service type, destination, volume, and cargo nature. Contact us for a free personalized quote tailored to your specific needs.',
+        
+        'faq.q3.question': 'What are the timeframes for customs procedures?',
+        'faq.q3.answer': 'Timeframes depend on case complexity and cargo nature. Average: 24-48 hours for standard declarations, 3-5 days for complex cases requiring inspection.',
+        
+        'faq.q4.question': 'Which African countries do you deliver to?',
+        'faq.q4.answer': 'We serve 15+ African countries including all ECOWAS nations: Niger, Burkina Faso, Mali, Côte d\'Ivoire, Nigeria, Togo, Benin, Senegal, and other destinations upon request.',
+        
+        'faq.q5.question': 'How can I track my cargo in real-time?',
+        'faq.q5.answer': 'Use our online tracking system with your reference number, or contact our team at +233244801443 / +233518813480 for real-time updates.',
+        
+        'faq.q6.question': 'What documents are required for import/export?',
+        'faq.q6.answer': 'Required documents: commercial invoice, packing list, bill of lading, certificate of origin, import license (if applicable), and others depending on cargo nature.',
+
         // Gallery section
         'gallery.title': 'Gallery',
         'gallery.subtitle': 'Discover our facilities and operations',
