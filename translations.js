@@ -11,6 +11,7 @@ const translations = {
         'nav.tracking': 'Suivi Cargaison',
         'nav.about': 'À propos',
         'nav.faq': 'FAQ',
+        'nav.blog': 'Actualités',
         'nav.gallery': 'Galerie',
         'nav.contact': 'Contact',
 
@@ -128,6 +129,34 @@ const translations = {
         'faq.q6.question': 'Quels documents sont requis pour l\'import/export ?',
         'faq.q6.answer': 'Documents requis : facture commerciale, liste de colisage, connaissement, certificat d\'origine, licence d\'importation (si applicable), et autres selon la nature des marchandises.',
 
+        // Blog/News section
+        'blog.title': 'Actualités & Conseils',
+        'blog.subtitle': 'Restez informé des dernières actualités logistiques et réglementaires',
+        'blog.read_more': 'Lire la suite',
+        'blog.published_on': 'Publié le',
+        'blog.category': 'Catégorie',
+        'blog.view_all': 'Voir toutes les actualités',
+        
+        'blog.article1.title': 'Nouvelles Réglementations Douanières CEDEAO 2025',
+        'blog.article1.excerpt': 'Découvrez les nouvelles procédures douanières de la CEDEAO qui entrent en vigueur et leur impact sur vos expéditions.',
+        'blog.article1.category': 'Réglementation',
+        'blog.article1.date': '8 Août 2025',
+        
+        'blog.article2.title': 'Port de Tema : Nouveaux Équipements et Capacités',
+        'blog.article2.excerpt': 'Le port de Tema s\'équipe de nouvelles grues et augmente sa capacité de traitement des conteneurs pour 2025.',
+        'blog.article2.category': 'Infrastructure',
+        'blog.article2.date': '5 Août 2025',
+        
+        'blog.article3.title': 'Optimisation des Coûts de Transport Maritime',
+        'blog.article3.excerpt': 'Conseils pratiques pour réduire vos coûts de transport maritime et améliorer la rentabilité de vos expéditions.',
+        'blog.article3.category': 'Conseils',
+        'blog.article3.date': '2 Août 2025',
+        
+        'blog.article4.title': 'Digitalisation des Procédures au Port de Tema',
+        'blog.article4.excerpt': 'Les nouvelles technologies digitales transforment les opérations portuaires et accélèrent les procédures.',
+        'blog.article4.category': 'Innovation',
+        'blog.article4.date': '30 Juillet 2025',
+
         // Gallery section
         'gallery.title': 'Galerie',
         'gallery.subtitle': 'Découvrez nos installations et nos opérations',
@@ -242,6 +271,7 @@ const translations = {
         'nav.tracking': 'Cargo Tracking',
         'nav.about': 'About',
         'nav.faq': 'FAQ',
+        'nav.blog': 'News',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
 
@@ -358,6 +388,34 @@ const translations = {
         
         'faq.q6.question': 'What documents are required for import/export?',
         'faq.q6.answer': 'Required documents: commercial invoice, packing list, bill of lading, certificate of origin, import license (if applicable), and others depending on cargo nature.',
+
+        // Blog/News section
+        'blog.title': 'News & Insights',
+        'blog.subtitle': 'Stay informed with the latest logistics and regulatory updates',
+        'blog.read_more': 'Read more',
+        'blog.published_on': 'Published on',
+        'blog.category': 'Category',
+        'blog.view_all': 'View all news',
+        
+        'blog.article1.title': 'New ECOWAS Customs Regulations 2025',
+        'blog.article1.excerpt': 'Discover the new ECOWAS customs procedures coming into effect and their impact on your shipments.',
+        'blog.article1.category': 'Regulations',
+        'blog.article1.date': 'August 8, 2025',
+        
+        'blog.article2.title': 'Tema Port: New Equipment and Capacities',
+        'blog.article2.excerpt': 'Tema Port is equipped with new cranes and increases its container handling capacity for 2025.',
+        'blog.article2.category': 'Infrastructure',
+        'blog.article2.date': 'August 5, 2025',
+        
+        'blog.article3.title': 'Maritime Transport Cost Optimization',
+        'blog.article3.excerpt': 'Practical tips to reduce your maritime transport costs and improve the profitability of your shipments.',
+        'blog.article3.category': 'Tips',
+        'blog.article3.date': 'August 2, 2025',
+        
+        'blog.article4.title': 'Digitalization of Tema Port Procedures',
+        'blog.article4.excerpt': 'New digital technologies are transforming port operations and accelerating procedures.',
+        'blog.article4.category': 'Innovation',
+        'blog.article4.date': 'July 30, 2025',
 
         // Gallery section
         'gallery.title': 'Gallery',
