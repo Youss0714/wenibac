@@ -1428,3 +1428,24 @@ function toggleBlogArticle(element) {
     
     return false;
 }
+
+// Expand all blog articles functionality
+function expandAllBlogArticles() {
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    blogCards.forEach(card => {
+        const readMoreBtn = card.querySelector('.blog-read-more');
+        const fullContent = card.querySelector('.blog-full-content');
+        
+        // Only expand if not already expanded
+        if (fullContent.style.display === 'none' || fullContent.style.display === '') {
+            toggleBlogArticle(readMoreBtn);
+        }
+    });
+    
+    // Scroll to the blog section
+    document.getElementById('blog').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+    });
+}
