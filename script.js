@@ -1385,6 +1385,10 @@ function toggleFAQ(element) {
 
 // Blog article toggle functionality
 function toggleBlogArticle(element) {
+    // Prevent any default link behavior
+    event.preventDefault();
+    event.stopPropagation();
+    
     const blogCard = element.closest('.blog-card');
     const excerpt = blogCard.querySelector('.blog-excerpt');
     const fullContent = blogCard.querySelector('.blog-full-content');
@@ -1422,6 +1426,5 @@ function toggleBlogArticle(element) {
         element.setAttribute('data-expanded', 'false');
     }
     
-    // Prevent default link behavior
     return false;
 }
