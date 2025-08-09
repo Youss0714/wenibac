@@ -1382,3 +1382,46 @@ function toggleFAQ(element) {
         faqItem.classList.add("active");
     }
 }
+
+// Blog article toggle functionality
+function toggleBlogArticle(element) {
+    const blogCard = element.closest('.blog-card');
+    const excerpt = blogCard.querySelector('.blog-excerpt');
+    const fullContent = blogCard.querySelector('.blog-full-content');
+    const articleNum = element.getAttribute('data-article');
+    
+    if (fullContent.style.display === 'none' || fullContent.style.display === '') {
+        // Show full content
+        excerpt.style.display = 'none';
+        fullContent.style.display = 'block';
+        
+        // Update the content with proper formatting
+        const contentKey = `blog.article${articleNum}.content`;
+        const content = getTranslation(contentKey, currentLanguage);
+        if (content) {
+            // Convert markdown-style formatting to HTML
+            const formattedContent = content
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>');
+            fullContent.innerHTML = `<p>${formattedContent}</p>`;
+        }
+        
+        // Update button text
+        const readLessKey = currentLanguage === 'fr' ? 'Lire moins' : 'Read less';
+        element.textContent = readLessKey;
+        element.setAttribute('data-expanded', 'true');
+    } else {
+        // Show excerpt only
+        excerpt.style.display = 'block';
+        fullContent.style.display = 'none';
+        
+        // Update button text
+        const readMoreText = getTranslation('blog.read_more', currentLanguage) || 'Read more';
+        element.textContent = readMoreText;
+        element.setAttribute('data-expanded', 'false');
+    }
+    
+    // Prevent default link behavior
+    return false;
+}
