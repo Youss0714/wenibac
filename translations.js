@@ -2,7 +2,7 @@
 const translations = {
     fr: {
         // Meta tags
-        'meta.title': 'Wenibac Advanced Shipping Ltd. - Vos marchandises, notre priorité',
+        'meta.title': 'Wenibac Advanced Shipping Ltd. - Transport Maritime et Transit Ghana - Port Tema',
         'meta.description': 'Entreprise de transit professionnel au port de Tema, Ghana. Services de douane, transport maritime et terrestre, import/export.',
         
         // Navigation

@@ -1225,26 +1225,69 @@ function playNotificationSound() {
         }
     }
     
-    // Method 2: HTML5 Audio fallback
+    // Method 2: Enhanced HTML5 Audio fallback with multiple formats
     try {
-        // Create a simple tone using data URL
-        const audioData = 'data:audio/wav;base64,UklGRh4BAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YfoAAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCSuA1vrOcScFK4PE8sGIOwkVa7zx7KJQDQtOqOPyumAcBDuP3PCwfysEJ3nF8diPPgoTYLXp8OdWFgpJnt/yunAiByyB1vrNeSgFK4DE';
-        const audio = new Audio(audioData);
-        audio.volume = 0.5;
+        // Try multiple audio data formats for better compatibility
+        const audioFormats = [
+            // Primary beep sound (improved quality)
+            'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCSuA1vrOcScFK4PE8sGIOwkVa7zx7KJQDQtOqOPyumAcBDuP3PCwfysEJ3nF8diPPgoTYLXp8OdWFgpJnt/yunAiByyB1vrNeSgFK4DE',
+            // Alternative shorter beep
+            'data:audio/wav;base64,UklGRh4BAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YfoAAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCSuA1vrOcScFK4PE8sGIOwkVa7zx7KJQDQtOqOPyumAcBDuP3PCwfysEJ3nF8diPPgoTYLXp8OdWFgpJnt/yunAiByyB1vrNeSgFK4DE'
+        ];
         
-        const playPromise = audio.play();
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                console.log('Fallback audio played successfully');
-            }).catch((error) => {
-                console.log('Fallback audio failed:', error);
-                // Method 3: Visual notification as last resort
-                showVisualNotification();
-            });
-        }
+        let audioPlayed = false;
+        
+        const tryNextAudio = (formatIndex = 0) => {
+            if (formatIndex >= audioFormats.length || audioPlayed) {
+                if (!audioPlayed) {
+                    console.log('All audio formats failed, using visual notification');
+                    showVisualNotificationWithPulse();
+                }
+                return;
+            }
+            
+            try {
+                const audio = new Audio(audioFormats[formatIndex]);
+                audio.volume = 0.4;
+                audio.crossOrigin = 'anonymous';
+                
+                // Add event listeners for better error handling
+                audio.onerror = (e) => {
+                    console.log(`Audio format ${formatIndex + 1} error:`, e);
+                    tryNextAudio(formatIndex + 1);
+                };
+                
+                audio.oncanplaythrough = () => {
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            console.log(`Fallback audio (format ${formatIndex + 1}) played successfully`);
+                            audioPlayed = true;
+                        }).catch((error) => {
+                            console.log(`Fallback audio format ${formatIndex + 1} play failed:`, error);
+                            tryNextAudio(formatIndex + 1);
+                        });
+                    } else {
+                        console.log(`Fallback audio (format ${formatIndex + 1}) played successfully (legacy)`);
+                        audioPlayed = true;
+                    }
+                };
+                
+                // Trigger loading
+                audio.load();
+                
+            } catch (audioError) {
+                console.log(`Audio format ${formatIndex + 1} creation failed:`, audioError);
+                tryNextAudio(formatIndex + 1);
+            }
+        };
+        
+        // Start trying audio formats
+        tryNextAudio(0);
+        
     } catch (error) {
-        console.log('Audio fallback failed:', error);
-        showVisualNotification();
+        console.log('All HTML5 Audio methods failed:', error);
+        showVisualNotificationWithPulse();
     }
 }
 
@@ -1257,6 +1300,33 @@ function showVisualNotification() {
             chatbot.style.animation = '';
         }, 600);
     }
+}
+
+function showVisualNotificationWithPulse() {
+    // Enhanced visual notification with multiple effects
+    const chatbot = document.getElementById('welcomeChatbot');
+    const chatbotTrigger = document.getElementById('chatbotTrigger');
+    
+    if (chatbot) {
+        // Add glowing pulse animation
+        chatbot.style.animation = 'chatbotPulse 0.8s ease-in-out 3';
+        chatbot.style.boxShadow = '0 0 20px #3b82f6, 0 0 40px #3b82f6aa';
+        
+        setTimeout(() => {
+            chatbot.style.animation = '';
+            chatbot.style.boxShadow = '';
+        }, 2400); // 3 pulses * 0.8s
+    }
+    
+    // Also pulse the trigger button
+    if (chatbotTrigger) {
+        chatbotTrigger.style.animation = 'bounce 0.5s ease-in-out 2';
+        setTimeout(() => {
+            chatbotTrigger.style.animation = '';
+        }, 1000);
+    }
+    
+    console.log('Visual notification with enhanced pulse displayed');
 }
 
 function initChatbot() {
